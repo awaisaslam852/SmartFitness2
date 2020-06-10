@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/layoutDefaultExerciseExpanded"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<View
+		android:id="@+id/divider"
+		android:layout_width="0dp"
+		android:layout_height="0.7dp"
+		android:background="@color/gray"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/header"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/custom_14dp"
+		android:visibility="visible"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/divider">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/headerSetsContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/headerSuperSetContainer"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/imageViewSetsIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_21dp"
+				android:adjustViewBounds="true"
+				android:contentDescription="@null"
+				android:src="@drawable/icon_sets"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/textViewSetsLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/textViewSetsLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:text="@string/sets"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				app:layout_constraintStart_toEndOf="@+id/imageViewSetsIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/headerSuperSetContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toEndOf="@id/headerSetsContainer"
+			app:layout_constraintEnd_toStartOf="@id/headerRepsContainer"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/superSetIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_21dp"
+				android:adjustViewBounds="true"
+				android:src="@drawable/icon_superset_blue"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/superSetLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"
+				android:contentDescription="@null" />
+
+			<TextView
+				android:id="@+id/superSetLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				android:maxLines="1"
+				android:text="@string/Superset"
+				app:layout_constraintStart_toEndOf="@id/superSetIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/headerRepsContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toEndOf="@id/headerSuperSetContainer"
+			app:layout_constraintEnd_toStartOf="@+id/headerRmContainer"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/imageViewRepsIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_21dp"
+				android:adjustViewBounds="true"
+				android:src="@drawable/icon_reps"
+				android:contentDescription="@null"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/textViewRepsLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/textViewRepsLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:text="@string/reps"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				app:layout_constraintStart_toEndOf="@id/imageViewRepsIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/headerRmContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toEndOf="@id/headerRepsContainer"
+			app:layout_constraintEnd_toEndOf="@id/headerDropSetContainer"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/rmIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_21dp"
+				android:adjustViewBounds="true"
+				android:src="@drawable/icon_reps"
+				android:contentDescription="@null"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/rmLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/rmLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:text="@string/RM"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				app:layout_constraintStart_toEndOf="@id/rmIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/headerDropSetContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toEndOf="@id/headerRmContainer"
+			app:layout_constraintEnd_toStartOf="@id/headerKgContainer"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/dropSetIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_21dp"
+				android:adjustViewBounds="true"
+				android:src="@drawable/icon_dropset_blue"
+				android:contentDescription="@null"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/dropSetLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/dropSetLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:text="@string/drop_set"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				app:layout_constraintStart_toEndOf="@id/dropSetIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/headerKgContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toStartOf="@id/headerDropSetContainer"
+			app:layout_constraintEnd_toStartOf="@+id/headerPercentContainer"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/imageViewKgIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_21dp"
+				android:adjustViewBounds="true"
+				android:src="@drawable/kg_icon_selected"
+				android:contentDescription="@null"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/headerKgTitleView"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/headerKgTitleView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:text="@string/Kg"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				android:visibility="visible"
+				app:layout_constraintStart_toEndOf="@id/imageViewKgIcon"
+				app:layout_constraintEnd_toStartOf="@id/kgExpandBtn"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<ImageView
+				android:id="@+id/kgExpandBtn"
+				android:layout_width="8.3dp"
+				android:layout_height="14.7dp"
+				android:layout_marginStart="7dp"
+				android:contentDescription="@null"
+				android:rotation="90"
+				android:src="@drawable/exercise_list_expand_icon"
+				android:tint="@color/colorPrimary"
+				android:visibility="gone"
+				app:layout_constraintStart_toEndOf="@id/headerKgTitleView"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/headerPercentContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:visibility="visible"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toEndOf="@id/headerKgContainer"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<TextView
+				android:id="@+id/percentIconLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				android:text="%"
+				tools:ignore="HardcodedText"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/percentLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/percentLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_17sp"
+				android:visibility="visible"
+				android:text="@string/Percent"
+				app:layout_constraintStart_toEndOf="@id/percentIconLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/setsList"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/header"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/editContainer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/setsList"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/addReduceContainer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toTopOf="@+id/machineNumberContainer">
+
+			<ImageView
+				android:id="@+id/addSetBtn"
+				android:layout_width="@dimen/custom_24dp"
+				android:layout_height="wrap_content"
+				android:adjustViewBounds="true"
+				android:src="@drawable/plus_yellow"
+				android:contentDescription="@null"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/addReduceLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="12dp"
+				android:fontFamily="@font/os_bold"
+				android:textSize="@dimen/custom_20sp"
+				android:textColor="#000000"
+				android:text="@string/add_reduce_set"
+				app:layout_constraintStart_toEndOf="@id/addSetBtn"
+				app:layout_constraintEnd_toStartOf="@id/reduceSetBtn"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<ImageView
+				android:id="@+id/reduceSetBtn"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_24dp"
+				android:adjustViewBounds="true"
+				android:contentDescription="@null"
+				android:src="@drawable/minus_yellow"
+				app:layout_constraintStart_toEndOf="@id/addReduceLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/machineNumberContainer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/addReduceContainer"
+			app:layout_constraintBottom_toTopOf="@+id/noteContainer">
+
+			<ImageView
+				android:id="@+id/imageViewMachine"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_27dp"
+				android:adjustViewBounds="true"
+				android:contentDescription="@null"
+				android:scaleType="fitCenter"
+				android:src="@drawable/icon_machines"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/machineNumberLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="5.3dp"
+				android:layout_marginEnd="7.3dp"
+				android:fontFamily="@font/os"
+				android:textColor="@color/secondary_text_color"
+				android:textSize="@dimen/custom_15sp"
+				android:text="@string/machine_no"
+				app:layout_constraintEnd_toStartOf="@id/machineNumberPicker"
+				app:layout_constraintStart_toEndOf="@id/imageViewMachine"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/machineNumberPicker"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="@dimen/custom_6dp"
+				android:background="@drawable/gray_stroke_rounded_button_background"
+				app:layout_constraintStart_toEndOf="@id/machineNumberLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					android:id="@+id/machineNumberPickerValueView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/os"
+					android:textColor="@color/black"
+					android:textSize="@dimen/custom_15sp"
+					tools:ignore="HardcodedText"
+					android:text="15"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toStartOf="@id/machineNumberPickerDropdownIcon"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+				<TextView
+					android:id="@+id/machineNumberPickerDropdownIcon"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="@dimen/custom_6dp"
+					android:textColor="@color/black"
+					android:textSize="10sp"
+					android:text="▼"
+					tools:ignore="HardcodedText,SmallSp"
+					app:layout_constraintStart_toEndOf="@id/machineNumberPickerValueView"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/noteContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="@dimen/custom_45dp"
+			android:layout_marginTop="@dimen/custom_15dp"
+			android:padding="@dimen/custom_10dp"
+			app:layout_goneMarginBottom="@dimen/custom_10dp"
+			android:gravity="center_vertical"
+			android:background="@drawable/search_bar_rounded_shape"
+			android:backgroundTint="@color/gray"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/machineNumberContainer"
+			app:layout_constraintBottom_toTopOf="@+id/controlsContainer">
+
+			<EditText
+				android:id="@+id/noteView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:background="@color/transparent"
+				android:fontFamily="@font/os"
+				android:hint="@string/exercise_notes"
+				android:imeOptions="actionDone"
+				android:importantForAutofill="no"
+				android:inputType="text"
+				android:textColorHint="@color/secondary_text_color"
+				android:textSize="@dimen/custom_15sp"
+				android:maxLength="20"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/pencilIcon"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<ImageView
+				android:id="@+id/pencilIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/custom_18dp"
+				android:adjustViewBounds="true"
+				android:contentDescription="@null"
+				android:src="@drawable/icon_edit"
+				android:tint="@color/colorPrimary"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="@id/noteView"
+				app:layout_constraintBottom_toBottomOf="@id/noteView"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/controlsContainer"
+			android:orientation="horizontal"
+			android:layout_width="0dp"
+			android:layout_height="@dimen/custom_33dp"
+			android:layout_marginHorizontal="17dp"
+			android:layout_marginTop="15dp"
+			android:layout_marginBottom="11dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/noteContainer"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<Button
+				android:id="@+id/deleteBtn"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:textAllCaps="false"
+				android:textColor="@color/white"
+				android:fontFamily="@font/os_semi_bold"
+				android:textSize="@dimen/custom_15sp"
+				android:background="@drawable/gradient_blue_vertical_rounded"
+				android:text="@string/delete"
+				android:layout_marginEnd="13dp"
+				android:visibility="visible"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/unlinkSupersetBtn"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<Button
+				android:id="@+id/unlinkSupersetBtn"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:layout_marginEnd="13dp"
+				android:background="@drawable/gradient_blue_vertical_rounded"
+				android:textAllCaps="false"
+				android:textColor="@color/white"
+				android:fontFamily="@font/os_semi_bold"
+				android:textSize="@dimen/custom_15sp"
+				android:text="@string/unlink_superset"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/deleteBtn"
+				app:layout_constraintEnd_toStartOf="@id/editBtn"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<Button
+				android:id="@+id/editBtn"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:background="@drawable/blue_thin_stroke_rounded_button_background"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="@color/colorPrimary"
+				android:textSize="@dimen/custom_15sp"
+				android:textAllCaps="false"
+				android:text="@string/edit_data"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/unlinkSupersetBtn"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

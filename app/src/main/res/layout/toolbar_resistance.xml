@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/toolbarResistance"
+	style="@style/TopBar"
+	android:layout_width="match_parent"
+	android:layout_height="50.7dp"
+	android:background="@drawable/gradient_blue">
+
+	<TextView
+		android:id="@+id/discardBtn"
+		style="@style/TopBarButton"
+		android:layout_marginStart="10dp"
+		android:text="@string/discard"
+		app:layout_constraintHorizontal_chainStyle="spread_inside"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/topBarTitleView"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<TextView
+		android:id="@+id/topBarTitleView"
+		style="@style/TopBarTitle"
+		android:text="@string/resistance_training"
+		app:layout_constraintStart_toEndOf="@id/discardBtn"
+		app:layout_constraintEnd_toStartOf="@id/saveBtn"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<TextView
+		android:id="@+id/saveBtn"
+		style="@style/TopBarButton"
+		android:layout_marginEnd="10dp"
+		android:text="@string/save"
+		app:layout_constraintStart_toEndOf="@id/topBarTitleView"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

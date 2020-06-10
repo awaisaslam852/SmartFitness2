@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/layoutExercise"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="#f7f7f7">
+
+	<ImageView
+		android:id="@+id/exercisePhotoView"
+		android:layout_width="74dp"
+		android:layout_height="80dp"
+		android:layout_marginVertical="3dp"
+		android:scaleType="centerCrop"
+		android:contentDescription="@null"
+		android:src="@mipmap/ic_launcher"
+		android:background="@color/transparent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<TextView
+		android:id="@+id/topBarTitleView"
+		style="@style/ExerciseTitle"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="4dp"
+		android:textSize="16.7sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/imageViewFavorite"
+		app:layout_constraintStart_toEndOf="@id/exercisePhotoView"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Chess Press Machine"/>
+
+	<ImageView
+		android:id="@+id/checkboxSubcategoryExercise"
+		android:layout_width="17.7dp"
+		android:layout_height="17.7dp"
+		android:layout_marginEnd="10.7dp"
+		android:src="@drawable/check_box_not_selected"
+		android:contentDescription="@null"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<ImageView
+		android:id="@+id/imageViewFavorite"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="8dp"
+		android:background="@color/transparent"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_favorite_exercise"
+		android:tint="@color/colorPrimary"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/checkboxSubcategoryExercise"
+		app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

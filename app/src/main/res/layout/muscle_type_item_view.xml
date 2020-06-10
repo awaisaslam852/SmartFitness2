@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_margin="5dp"
+		android:layout_marginBottom="15dp"
+		app:cardElevation="4dp"
+		app:cardCornerRadius="4dp"
+		app:layout_constraintDimensionRatio="w,105:127.7"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/container"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/popup_fully_rounded_background">
+
+			<ImageView
+				android:id="@+id/imageView"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:layout_marginHorizontal="@dimen/custom_6dp"
+				android:adjustViewBounds="true"
+				android:scaleType="fitXY"
+				android:src="@drawable/pic_biceps"
+				android:background="@drawable/muscle_type_image_background"
+				android:contentDescription="@null"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toTopOf="@id/titleContainer"/>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/titleContainer"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:padding="@dimen/custom_4dp"
+				android:background="#10b2eb"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					android:id="@+id/topBarTitleView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					android:fontFamily="@font/os_semi_bold"
+					android:textColor="@color/white"
+					android:textSize="@dimen/custom_17sp"
+					android:maxLines="1"
+					android:text="@string/chest"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<TextView
+				android:id="@+id/normalDayView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/custom_4dp"
+				android:layout_marginEnd="8dp"
+				android:layout_alignParentEnd="true"
+				android:background="@drawable/popup_fully_rounded_background"
+				android:backgroundTint="@color/orange_pale"
+				android:elevation="4dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:paddingStart="6dp"
+				android:paddingEnd="6dp"
+				android:shadowColor="@color/transparent"
+				android:textAlignment="center"
+				android:textColor="@color/white"
+				android:textSize="16sp"
+				android:text="A"
+				tools:ignore="HardcodedText"
+				android:visibility="invisible"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"/>
+
+			<TextView
+				android:id="@+id/legDayView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="8dp"
+				android:layout_alignParentEnd="true"
+				android:background="@drawable/popup_fully_rounded_background"
+				android:backgroundTint="@color/orange_pale"
+				android:elevation="4dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:paddingStart="6dp"
+				android:paddingEnd="6dp"
+				android:shadowColor="@color/transparent"
+				android:textAlignment="center"
+				android:textColor="@color/white"
+				android:textSize="16sp"
+				android:text="A"
+				tools:ignore="HardcodedText"
+				android:visibility="invisible"
+				app:layout_constraintVertical_bias="0.6"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<View
+			android:id="@+id/borderView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/muscle_type_border"
+			android:visibility="gone"/>
+
+	</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

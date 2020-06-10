@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="12dp">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/restContainer"
+		android:layout_width="0dp"
+		android:layout_height="@dimen/rest_container_height"
+		android:background="@color/gray"
+		android:layout_marginTop="12dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageView
+			android:id="@+id/restIcon"
+			android:layout_width="wrap_content"
+			android:layout_height="@dimen/rest_timer_icon_height"
+			android:adjustViewBounds="true"
+			android:src="@drawable/icon_clock"
+			android:contentDescription="@null"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/restTitle"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<TextView
+			android:id="@+id/restTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8.7dp"
+			android:fontFamily="@font/os_semi_bold"
+			android:textSize="@dimen/rest_timer_text_height"
+			android:textAllCaps="true"
+			android:textColor="@color/colorPrimary"
+			android:text="@string/REST"
+			tools:ignore="HardcodedText"
+			app:layout_constraintStart_toEndOf="@id/restIcon"
+			app:layout_constraintEnd_toStartOf="@id/restDurationView"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<TextView
+			android:id="@+id/restDurationView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="5dp"
+			android:fontFamily="@font/os_semi_bold"
+			android:textSize="@dimen/rest_timer_text_height"
+			android:textAllCaps="true"
+			android:textColor="@color/colorPrimary"
+			android:text="00:45"
+			tools:ignore="HardcodedText"
+			app:layout_constraintStart_toEndOf="@id/restTitle"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/titleContainer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="12dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/restContainer">
+
+		<TextView
+			android:id="@+id/titleView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/os_semi_bold"
+			android:textSize="@dimen/circuit_round_title_size"
+			android:textAllCaps="true"
+			android:textColor="@color/colorPrimary"
+			android:text="ROUND 1"
+			tools:ignore="HardcodedText"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/deleteBtn"
+			android:layout_width="wrap_content"
+			android:layout_height="24.3dp"
+			android:layout_marginEnd="15.3dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:background="@drawable/gradient_orange_vertical">
+
+			<ImageView
+				android:id="@+id/deleteIcon"
+				android:layout_width="11.3dp"
+				android:layout_height="13dp"
+				android:layout_marginStart="7.7dp"
+				android:src="@drawable/icon_trash"
+				android:contentDescription="@null"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/deleteTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="6.3dp"
+				android:layout_marginEnd="10.7dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:textSize="@dimen/circuit_delete_round_size"
+				android:textColor="@color/white"
+				android:text="@string/delete_round"
+				tools:ignore="HardcodedText"
+				app:layout_constraintStart_toEndOf="@id/deleteIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/topBar"
+		style="@style/TopBar"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageView
+			android:id="@+id/topBarBackBtn"
+			style="@style/TopBarButton"
+			android:layout_marginStart="13dp"
+			android:contentDescription="@null"
+			android:src="@drawable/icon_arrow_start"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<TextView
+			style="@style/TopBarTitle"
+			android:text="@string/program_info"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<TextView
+		android:id="@+id/completeSaveView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/custom_20dp"
+		android:layout_marginTop="@dimen/custom_22dp"
+		android:fontFamily="@font/os"
+		android:textSize="@dimen/custom_17sp"
+		android:textColor="@color/black"
+		android:text="@string/complete_the_same"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/topBar"/>
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/traineeNameContainer"
+		style="@style/ProgramInfoInputContainerStyle"
+		android:layout_marginHorizontal="19dp"
+		android:layout_marginTop="@dimen/custom_15dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/completeSaveView">
+
+		<EditText
+			android:id="@+id/traineeNameView"
+			style="@style/ProgramDetailValueTextStyle"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:background="@color/transparent"
+			android:hint="@string/trainee_name"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/trainerNameContainer"
+		style="@style/ProgramInfoInputContainerStyle"
+		android:layout_marginTop="@dimen/custom_14dp"
+		android:hint="@string/trainer_name"
+		app:layout_constraintStart_toStartOf="@id/traineeNameContainer"
+		app:layout_constraintEnd_toEndOf="@id/traineeNameContainer"
+		app:layout_constraintTop_toBottomOf="@id/traineeNameContainer">
+
+		<EditText
+			android:id="@+id/trainerNameView"
+			style="@style/ProgramDetailValueTextStyle"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:background="@color/transparent"
+			android:hint="@string/trainer_name"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<TextView
+		android:id="@+id/buildingDateTitleView"
+		style="@style/ProgramDetailValueTextStyle"
+		android:layout_marginStart="@dimen/custom_16dp"
+		android:textColor="@color/dark_gray"
+		android:textSize="@dimen/custom_13sp"
+		android:text="@string/building_date"
+		app:layout_constraintStart_toStartOf="@id/buildingDateView"
+		app:layout_constraintBottom_toTopOf="@id/buildingDateView"/>
+
+	<TextView
+		android:id="@+id/buildingDateView"
+		style="@style/ProgramInfoInputContainerStyle"
+		android:layout_marginTop="@dimen/custom_24dp"
+		android:hint="@string/building_date"
+		android:textSize="@dimen/custom_13sp"
+		app:layout_constraintStart_toStartOf="@id/traineeNameContainer"
+		app:layout_constraintEnd_toEndOf="@id/traineeNameContainer"
+		app:layout_constraintTop_toBottomOf="@id/trainerNameContainer"/>
+
+	<TextView
+		android:id="@+id/updateDateTitleView"
+		style="@style/ProgramDetailValueTextStyle"
+		android:layout_marginStart="@dimen/custom_16dp"
+		android:textColor="@color/dark_gray"
+		android:textSize="@dimen/custom_13sp"
+		android:text="@string/update_date"
+		app:layout_constraintStart_toStartOf="@id/updateDateView"
+		app:layout_constraintBottom_toTopOf="@id/updateDateView"/>
+
+	<TextView
+		android:id="@+id/updateDateView"
+		style="@style/ProgramInfoInputContainerStyle"
+		android:layout_marginTop="@dimen/custom_24dp"
+		android:hint="@string/update_date"
+		android:textSize="@dimen/custom_13sp"
+		app:layout_constraintStart_toStartOf="@id/traineeNameContainer"
+		app:layout_constraintEnd_toEndOf="@id/traineeNameContainer"
+		app:layout_constraintTop_toBottomOf="@id/buildingDateView"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/programNameContainer"
+		style="@style/ProgramInfoInputContainerStyle"
+		android:layout_marginTop="@dimen/custom_14dp"
+		android:hint="@string/trainer_name"
+		app:layout_constraintStart_toStartOf="@id/traineeNameContainer"
+		app:layout_constraintEnd_toEndOf="@id/traineeNameContainer"
+		app:layout_constraintTop_toBottomOf="@id/updateDateView">
+
+		<EditText
+			android:id="@+id/programNameView"
+			style="@style/ProgramDetailValueTextStyle"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:background="@color/transparent"
+			android:hint="@string/program_name"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<Button
+		android:id="@+id/okBtn"
+		style="@style/LargeOrangeButton"
+		android:layout_width="@dimen/custom_190dp"
+		android:fontFamily="@font/os_semi_bold"
+		android:textAllCaps="true"
+		android:text="@string/ok"
+		app:layout_constraintVertical_bias="0.25"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/programNameContainer"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<ImageView
+		android:id="@+id/selectBuildingDateBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="@dimen/custom_25dp"
+		android:layout_marginEnd="12dp"
+		android:layout_marginVertical="12dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_calendar_yellow"
+		app:layout_constraintEnd_toEndOf="@id/buildingDateView"
+		app:layout_constraintTop_toTopOf="@id/buildingDateView"
+		app:layout_constraintBottom_toBottomOf="@id/buildingDateView"/>
+
+	<ImageView
+		android:id="@+id/selectUpdateDateBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="@dimen/custom_25dp"
+		android:layout_marginEnd="12dp"
+		android:layout_marginVertical="12dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_calendar_yellow"
+		app:layout_constraintDimensionRatio="h,1:1"
+		app:layout_constraintEnd_toEndOf="@id/updateDateView"
+		app:layout_constraintTop_toTopOf="@id/updateDateView"
+		app:layout_constraintBottom_toBottomOf="@id/updateDateView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

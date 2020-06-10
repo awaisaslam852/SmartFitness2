@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+<stroke
+    android:color="@color/selected_nav_item_color"
+    android:width="1dp"
+    />
+    <gradient
+        android:angle="-90"
+        android:centerColor="@color/progress_story_center_color"
+        android:endColor="@color/progress_story_end_color"
+        android:startColor="@color/progress_story_start_color" />
+    <padding
+        android:bottom="5dp"
+        android:left="5dp"
+        android:right="5dp" />
+
+    <corners
+        android:bottomLeftRadius="@dimen/progressStoryCorners"
+        android:bottomRightRadius="@dimen/progressStoryCorners"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp" />
+
+</shape>

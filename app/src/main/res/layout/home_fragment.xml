@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:background="@color/layout_background"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<include
+		layout="@layout/toolbar_programs"/>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recyclerViewPrograms"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+		app:spanCount="2"
+		tools:listitem="@layout/home_program_list_item"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/toolbar"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/noProgramContainer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<TextView
+			android:id="@+id/textViewNoTrainingProgramFound"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/os_bold_italic"
+			android:textAlignment="center"
+			android:textColor="@color/black"
+			android:textSize="@dimen/custom_27sp"
+			android:text="@string/no_training_program_n_found"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+		<TextView
+			android:id="@+id/textViewWhatAreYouWaitingFor"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/custom_56dp"
+			android:fontFamily="@font/os_semi_bold"
+			android:textAlignment="center"
+			android:textColor="@color/black"
+			android:textSize="@dimen/custom_24sp"
+			android:text="@string/what_are_you_waiting_for_n_click_the_button"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/textViewNoTrainingProgramFound"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<Button
+		android:id="@+id/buttonAddNewProgram"
+		style="@style/OrangeButton"
+		android:elevation="6dp"
+		android:paddingHorizontal="@dimen/custom_14dp"
+		android:text="@string/add_new_program"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

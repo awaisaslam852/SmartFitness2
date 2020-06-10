@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/app_navigation"
+	app:startDestination="@id/splashFragment">
+	<fragment
+		android:id="@+id/splashFragment"
+		android:name="com.axles.smartfitness.ui.splash.SplashFragment"
+		android:label="SplashFragment"
+		tools:layout="@layout/splash_fragment">
+		<action
+			android:id="@+id/splashToLogin"
+			app:destination="@id/loginMethodFragment"
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:popUpTo="@id/splashFragment"
+			app:popUpToInclusive="true" />
+		<action
+			android:id="@+id/actionSplashToMain"
+			app:destination="@id/mainFragment"
+			app:launchSingleTop="true" />
+	</fragment>
+	<fragment
+		android:id="@+id/loginMethodFragment"
+		android:name="com.axles.smartfitness.ui.login.LoginMethodFragment"
+		android:label="LoginMethodFragment"
+		tools:layout="@layout/login_method_fragment">
+		<action
+			android:id="@+id/loginMethodToLogIn"
+			app:destination="@id/loginFragment"
+			app:enterAnim="@anim/nav_default_pop_enter_anim"
+			app:exitAnim="@anim/nav_default_pop_exit_anim"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpTo="@id/loginMethodFragment" />
+		<action
+			android:id="@+id/loginMethodToSignUp"
+			app:destination="@id/signUpFragment"
+			app:enterAnim="@anim/nav_default_pop_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpTo="@id/loginMethodFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/loginFragment"
+		android:name="com.axles.smartfitness.ui.login.LoginFragment"
+		android:label="LoginFragment"
+		tools:layout="@layout/login_fragment">
+		<action
+			android:id="@+id/loginToForgotPassword"
+			app:destination="@id/forgotPasswordFragment"
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpTo="@id/loginFragment" />
+		<action
+			android:id="@+id/loginToMain"
+			app:destination="@id/mainFragment"
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:launchSingleTop="true"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpToInclusive="true" />
+
+		<action
+			android:id="@+id/toWebView"
+			app:destination="@id/webViewFragment">
+
+			<argument
+				android:name="url"
+				app:argType="string" />
+
+		</action>
+
+	</fragment>
+	<fragment
+		android:id="@+id/signUpFragment"
+		android:name="com.axles.smartfitness.ui.login.SignUpFragment"
+		android:label="SignUpFragment"
+		tools:layout="@layout/sign_up_fragment">
+		<action
+			android:id="@+id/signUpToHome"
+			app:destination="@id/mainFragment"
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:launchSingleTop="true"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpToInclusive="true" />
+
+		<action
+			android:id="@+id/toWebView"
+			app:destination="@id/webViewFragment">
+
+			<argument
+				android:name="url"
+				app:argType="string" />
+
+		</action>
+
+	</fragment>
+	<fragment
+		android:id="@+id/forgotPasswordFragment"
+		android:name="com.axles.smartfitness.ui.login.ForgotPasswordFragment"
+		android:label="ForgotPasswordFragment"
+		tools:layout="@layout/forgot_password_fragment" />
+	<fragment
+		android:id="@+id/mainFragment"
+		android:name="com.axles.smartfitness.ui.home.HomeFragment"
+		android:label="main_fragment"
+		tools:layout="@layout/home_fragment">
+		<action
+			android:id="@+id/toCardioActivity"
+			app:destination="@id/cardioActivitiesFragment"
+			app:popUpTo="@id/mainFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"
+				app:nullable="true"
+				android:defaultValue="@null"/>
+
+		</action>
+		<action
+			android:id="@+id/mainToProfile"
+			app:destination="@id/profileFragment"
+			app:popUpTo="@id/mainFragment" />
+		<action
+			android:id="@+id/mainToReceivedPrograms"
+			app:destination="@id/receivedProgramsFragment"
+			app:popUpTo="@id/mainFragment" />
+		<action
+			android:id="@+id/mainToAbout"
+			app:destination="@id/aboutFragment"
+			app:popUpTo="@id/mainFragment" />
+
+		<action
+			android:id="@+id/actionToResistanceTrainingFragment"
+			app:destination="@id/resistanceTrainingFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"
+				app:nullable="true"
+				android:defaultValue="@null"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toCircuitTraining"
+			app:destination="@id/circuitTrainingFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"
+				app:nullable="true"
+				android:defaultValue="@null"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toProgramDetail"
+			app:destination="@+id/programDetailFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+		<action
+			android:id="@+id/toProgramShare"
+			app:destination="@id/programShareFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/cardioActivitiesFragment"
+		android:name="com.axles.smartfitness.ui.cardio.CardioActivitiesFragment"
+		android:label="CardioActivitiesFragment"
+		tools:layout="@layout/cardio_activities_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"
+			app:nullable="true"
+			android:defaultValue="@null"/>
+
+		<action
+			android:id="@+id/cardioActivitiesToCardioHelp"
+			app:destination="@id/helpCardioFragment"
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:launchSingleTop="false"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpTo="@id/cardioActivitiesFragment" />
+		<action
+			android:id="@+id/cardioActivitiesToCardioEdit"
+			app:destination="@id/cardioEditFragment"
+			app:enterAnim="@anim/nav_default_pop_enter_anim"
+			app:exitAnim="@anim/nav_default_pop_exit_anim"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpTo="@id/cardioActivitiesFragment" />
+
+		<action
+			android:id="@+id/toProgramFulfill"
+			app:destination="@id/programFulfillFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+	</fragment>
+	<fragment
+		android:id="@+id/helpCardioFragment"
+		android:name="com.axles.smartfitness.ui.cardio.HelpCardioFragment"
+		android:label="HelpCardioFragment"
+		tools:layout="@layout/help_cardio_fragment" />
+	<fragment
+		android:id="@+id/cardioEditFragment"
+		android:name="com.axles.smartfitness.ui.cardio.edit.CardioEditDialog"
+		android:label="CardioEditFragment"
+		tools:layout="@layout/edit_cardio_row_fragment">
+		<action
+			android:id="@+id/cardioEditToCardioActivities"
+			app:popUpTo="@id/cardioActivitiesFragment" />
+	</fragment>
+
+	<fragment
+		android:id="@+id/profileFragment"
+		android:name="com.axles.smartfitness.ui.profile.ProfileFragment"
+		android:label="ProfileFragment"
+		tools:layout="@layout/profile_fragment">
+		<action
+			android:id="@+id/actionProfileToEdit"
+			app:destination="@id/profileEditFragment"
+			app:enterAnim="@anim/nav_default_enter_anim"
+			app:exitAnim="@anim/nav_default_exit_anim"
+			app:launchSingleTop="false"
+			app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+			app:popExitAnim="@anim/nav_default_pop_exit_anim"
+			app:popUpTo="@id/profileFragment" />
+	</fragment>
+	<fragment
+		android:id="@+id/profileEditFragment"
+		android:name="com.axles.smartfitness.ui.profile.edit.EditProfileFragment"
+		android:label="ProfileEditFragment"
+		tools:layout="@layout/profile_edit_fragment" />
+
+
+	<fragment
+		android:id="@+id/receivedProgramsFragment"
+		android:name="com.axles.smartfitness.ui.program.ProgramReceivedFragment"
+		android:label="ProgramReceivedFragment"
+		tools:layout="@layout/program_received_fragment" />
+
+
+	<fragment
+		android:id="@+id/aboutFragment"
+		android:name="com.axles.smartfitness.ui.about.AboutFragment"
+		android:label="AboutFragment"
+		tools:layout="@layout/about_fragment">
+
+		<action
+			android:id="@+id/toWebView"
+			app:destination="@id/webViewFragment">
+
+			<argument
+				android:name="url"
+				app:argType="string" />
+
+		</action>
+
+	</fragment>
+	<action
+		android:id="@+id/toLoginMethodFragment"
+		app:destination="@id/loginMethodFragment"
+		app:launchSingleTop="true"
+		app:popUpTo="@id/mainFragment"
+		app:popUpToInclusive="true" />
+	<fragment
+		android:id="@+id/resistanceTrainingFragment"
+		android:name="com.axles.smartfitness.ui.resistance.ResistanceTrainingFragment"
+		android:label="ResistanceTrainingFragment"
+		tools:layout="@layout/resistance_training_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"
+			app:nullable="true"
+			android:defaultValue="@null"/>
+
+		<action
+			android:id="@+id/toSplitResistanceTrainingFragment"
+			app:destination="@id/splitResistanceTrainingFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toProgramFulfill"
+			app:destination="@id/programFulfillFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+
+	</fragment>
+	<!--    should be a global action, cause there are two entry points-->
+	<action
+		android:id="@+id/action_resistanceTrainingFragment_to_exercisesFragment"
+		app:destination="@id/exercisesFragment"
+		app:enterAnim="@anim/fragment_open_enter"
+		app:exitAnim="@anim/fragment_open_exit"
+		app:popEnterAnim="@anim/fragment_open_enter"
+		app:popExitAnim="@anim/fragment_open_exit" />
+	<fragment
+		android:id="@+id/splitResistanceTrainingFragment"
+		android:name="com.axles.smartfitness.ui.resistance.split.SplitResistanceTrainingFragment"
+		android:label="SplitResistanceTrainingFragment"
+		tools:layout="@layout/split_resistance_training_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/exercisesFragment"
+		android:name="com.axles.smartfitness.ui.resistance.exercise.ExercisesListFragment"
+		android:label="ExercisesFragment"
+		tools:layout="@layout/exercise_list_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		<argument
+			android:name="muscleGroup"
+			app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+		<action
+			android:id="@+id/actionToSelectExercise"
+			app:destination="@id/selectExerciseFragment"
+			app:enterAnim="@anim/fragment_fade_enter"
+			app:exitAnim="@anim/fragment_fade_exit"
+			app:popEnterAnim="@anim/fragment_fade_enter"
+			app:popExitAnim="@anim/fragment_fade_exit">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+			<argument
+				android:name="muscleGroup"
+				app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+		</action>
+
+		<action
+			android:id="@+id/toCreateWorkoutMethodFragment"
+			app:destination="@id/createWorkoutMethodFragment"
+			app:enterAnim="@anim/fragment_fade_enter"
+			app:exitAnim="@anim/fragment_fade_exit"
+			app:popEnterAnim="@anim/fragment_fade_enter"
+			app:popExitAnim="@anim/fragment_fade_exit"
+			app:popUpToInclusive="true">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+
+			<argument
+				android:name="muscleGroup"
+				app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+			<argument
+				android:name="workoutMethod"
+				app:argType="com.axles.smartfitness.engine.core.WorkoutMethod" />
+
+		</action>
+
+		<action
+			android:id="@+id/actionToProgramFulfill"
+			app:destination="@+id/programFulfillFragment"
+			app:enterAnim="@anim/fragment_fade_enter"
+			app:exitAnim="@anim/fragment_fade_exit"
+			app:popEnterAnim="@anim/fragment_fade_enter"
+			app:popExitAnim="@anim/fragment_fade_exit">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+
+		</action>
+
+		<action
+			android:id="@+id/toExerciseDetail"
+			app:destination="@+id/exerciseDetailFragment">
+
+			<argument
+				android:name="exercise"
+				app:argType="com.axles.smartfitness.engine.resistance.exercise.Exercise"/>
+
+		</action>
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/selectExerciseFragment"
+		android:name="com.axles.smartfitness.ui.resistance.select_exercise.SelectExerciseFragment"
+		android:label="SelectExerciseFragment"
+		tools:layout="@layout/select_exercise_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program" />
+
+		<argument
+			android:name="muscleGroup"
+			app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+		<argument
+			android:name="parentExercise"
+			app:argType="com.axles.smartfitness.engine.resistance.ResistanceExercise"
+			app:nullable="true"
+			android:defaultValue="@null"/>
+
+		<action
+			android:id="@+id/toExerciseDetailFragment"
+			app:destination="@id/exerciseDetailFragment"
+			app:enterAnim="@anim/fragment_open_enter"
+			app:exitAnim="@anim/fragment_open_exit"
+			app:popEnterAnim="@anim/fragment_open_enter"
+			app:popExitAnim="@anim/fragment_open_exit">
+
+			<argument
+				android:name="exercise"
+				app:argType="com.axles.smartfitness.engine.resistance.exercise.Exercise"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toSearchExercise"
+			app:destination="@id/searchExerciseFragment"
+			app:enterAnim="@anim/fragment_open_enter"
+			app:exitAnim="@anim/fragment_open_exit"
+			app:popEnterAnim="@anim/fragment_open_enter"
+			app:popExitAnim="@anim/fragment_open_exit">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+
+			<argument
+				android:name="muscleGroup"
+				app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+		</action>
+	</fragment>
+	<fragment
+		android:id="@+id/exerciseDetailFragment"
+		android:name="com.axles.smartfitness.ui.resistance.exercise_details.ExerciseDetailFragment"
+		android:label="ExerciseDetailFragment">
+
+		<argument
+			android:name="exercise"
+			app:argType="com.axles.smartfitness.engine.resistance.exercise.Exercise"/>
+
+	</fragment>
+	<fragment
+		android:id="@+id/searchExerciseFragment"
+		android:name="com.axles.smartfitness.ui.resistance.search_exercise.SearchExerciseFragment"
+		android:label="SearchExerciseFragment"
+		tools:layout="@layout/exercise_search_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program" />
+
+		<argument
+			android:name="muscleGroup"
+			app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+		<action
+			android:id="@+id/action_searchExerciseFragment_to_exercisesFragment"
+			app:destination="@id/exercisesFragment"
+			app:enterAnim="@anim/fragment_fade_enter"
+			app:exitAnim="@anim/fragment_fade_exit"
+			app:popEnterAnim="@anim/fragment_fade_enter"
+			app:popExitAnim="@anim/fragment_fade_exit"
+			app:popUpToInclusive="true" />
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/createWorkoutMethodFragment"
+		android:name="com.axles.smartfitness.ui.resistance.exercise.CreateWorkoutMethodFragment"
+		android:label="CreateWorkoutMethodFragment"
+		tools:layout="@layout/exercise_create_workout_method_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program" />
+
+		<argument
+			android:name="muscleGroup"
+			app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+		<argument
+			android:name="workoutMethod"
+			app:argType="com.axles.smartfitness.engine.core.WorkoutMethod" />
+
+		<action
+			android:id="@+id/actionToSelectExercise"
+			app:destination="@id/selectExerciseFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+			<argument
+				android:name="muscleGroup"
+				app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+			<argument
+				android:name="parentExercise"
+				app:argType="com.axles.smartfitness.engine.resistance.ResistanceExercise"
+				app:nullable="true"
+				android:defaultValue="@null"/>
+
+		</action>
+	</fragment>
+
+	<fragment
+		android:id="@+id/timerFragment"
+		android:name="com.axles.smartfitness.ui.timer.TimerFragment"
+		android:label="TimerFragment"
+		tools:layout="@layout/timer_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program" />
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/premiumFragment"
+		android:name="com.axles.smartfitness.ui.premium.PremiumFragment"
+		android:label="PremiumFragment"
+		tools:layout="@layout/premium_fragment" />
+
+	<fragment
+		android:id="@+id/circuitTrainingFragment"
+		android:name="com.axles.smartfitness.ui.circuit.CircuitTrainingFragment"
+		android:label="CircuitTrainingFragment"
+		tools:layout="@layout/circuit_training_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"
+			app:nullable="true"
+			android:defaultValue="@null"/>
+
+		<action
+			android:id="@+id/actionToSelectExercise"
+			app:destination="@id/selectExerciseFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+			<argument
+				android:name="muscleGroup"
+				app:argType="com.axles.smartfitness.engine.core.MuscleGroup" />
+
+		</action>
+
+		<action
+			android:id="@+id/toProgramFulfill"
+			app:destination="@id/programFulfillFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toExerciseDetail"
+			app:destination="@+id/exerciseDetailFragment">
+
+			<argument
+				android:name="exercise"
+				app:argType="com.axles.smartfitness.engine.resistance.exercise.Exercise"/>
+
+		</action>
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/programDetailFragment"
+		android:name="com.axles.smartfitness.ui.program.ProgramDetailFragment"
+		android:label="ProgramDetailFragment"
+		tools:layout="@layout/program_detail_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		<action
+			android:id="@+id/toResistanceDetailPerDayFragment"
+			app:destination="@+id/resistanceDetailPerDayFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+			<argument
+				android:name="splitDay"
+				app:argType="com.axles.smartfitness.engine.core.SplitDay"
+				app:nullable="true"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toExerciseDetail"
+			app:destination="@+id/exerciseDetailFragment">
+
+			<argument
+				android:name="exercise"
+				app:argType="com.axles.smartfitness.engine.resistance.exercise.Exercise"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toTimerFragment"
+			app:destination="@id/timerFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+
+		</action>
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/resistanceDetailPerDayFragment"
+		android:name="com.axles.smartfitness.ui.program.ResistanceDetailPerDayFragment"
+		tools:layout="@layout/fragment_resistance_detail_per_day">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		<argument
+			android:name="splitDay"
+			app:argType="com.axles.smartfitness.engine.core.SplitDay"
+			app:nullable="true"/>
+
+		<action
+			android:id="@+id/toExerciseDetail"
+			app:destination="@+id/exerciseDetailFragment">
+
+			<argument
+				android:name="exercise"
+				app:argType="com.axles.smartfitness.engine.resistance.exercise.Exercise"/>
+
+		</action>
+
+		<action
+			android:id="@+id/toTimerFragment"
+			app:destination="@id/timerFragment">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program" />
+
+		</action>
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/programFulfillFragment"
+		android:name="com.axles.smartfitness.ui.program.ProgramFulfillFragment"
+		android:label="ProgramFulfillFragment"
+		tools:layout="@layout/program_fulfill_fragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		<action
+			android:id="@+id/fromResistanceToProgramDetail"
+			app:destination="@id/programDetailFragment"
+			app:popUpTo="@id/resistanceTrainingFragment"
+			app:popUpToInclusive="true">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+
+		<action
+			android:id="@+id/fromCircuitToProgramDetail"
+			app:destination="@id/programDetailFragment"
+			app:popUpTo="@id/circuitTrainingFragment"
+			app:popUpToInclusive="true">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+
+		<action
+			android:id="@+id/fromCardioToProgramDetail"
+			app:destination="@id/programDetailFragment"
+			app:popUpTo="@id/cardioActivitiesFragment"
+			app:popUpToInclusive="true">
+
+			<argument
+				android:name="program"
+				app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+		</action>
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/webViewFragment"
+		tools:layout="@layout/web_view_fragment"
+		android:name="com.axles.smartfitness.ui.login.WebViewFragment"
+		android:label="WebViewFragment">
+
+		<argument
+			android:name="url"
+			app:argType="string" />
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/programShareFragment"
+		tools:layout="@layout/program_share_fragment"
+		android:name="com.axles.smartfitness.ui.program.share.ProgramShareFragment"
+		android:label="ProgramShareFragment">
+
+		<argument
+			android:name="program"
+			app:argType="com.axles.smartfitness.engine.program.Program"/>
+
+	</fragment>
+
+</navigation>

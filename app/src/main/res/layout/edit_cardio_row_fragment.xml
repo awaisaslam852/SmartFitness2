@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/layoutEditTransparent"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/fragment_transparent">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		android:background="@color/white"
+		android:minHeight="420dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent">
+
+		<TextView
+			android:id="@+id/cancelBtn"
+			style="@style/BottomSheetButtonStyle"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="16dp"
+			android:text="@string/cancel"
+			app:layout_constraintEnd_toStartOf="@id/textViewEditDataLabel"
+			app:layout_constraintHorizontal_chainStyle="spread_inside"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/textViewEditDataLabel"
+			style="@style/BottomSheetTitleStyle"
+			android:layout_marginTop="20dp"
+			android:fontFamily="@font/os_semi_bold_italic"
+			android:text="@string/edit_data"
+			android:textColor="@color/black"
+			app:layout_constraintEnd_toStartOf="@+id/saveBtn"
+			app:layout_constraintStart_toEndOf="@id/cancelBtn"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/saveBtn"
+			style="@style/BottomSheetButtonStyle"
+			android:layout_marginEnd="16dp"
+			android:textColor="@color/colorPrimary"
+			android:text="@string/save"
+			app:layout_constraintBottom_toBottomOf="@id/cancelBtn"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/textViewEditDataLabel"
+			app:layout_constraintTop_toTopOf="@id/cancelBtn" />
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/timeDistanceContainer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			app:layout_constraintBottom_toBottomOf="@id/layoutTimeDistancePicker"
+			app:layout_constraintEnd_toStartOf="@id/layoutTimeDistancePicker"
+			app:layout_constraintTop_toTopOf="@id/layoutTimeDistancePicker">
+
+			<TextView
+				android:id="@+id/textViewTimeDistanceEdit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/os"
+				android:text="@string/time_colon"
+				android:textColor="@color/black"
+				android:textSize="@dimen/cardio_edit_dialog_text_size"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<ImageView
+				android:id="@+id/imageButtonTimeDistanceDropdownIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="6dp"
+				android:layout_marginEnd="4dp"
+				android:background="@color/transparent"
+				android:contentDescription="@null"
+				android:scaleType="fitXY"
+				android:src="@drawable/icon_down_orange"
+				android:tint="@color/colorAccent"
+				app:layout_constraintBottom_toBottomOf="@id/textViewTimeDistanceEdit"
+				app:layout_constraintEnd_toStartOf="@id/textViewTimeDistanceEdit"
+				app:layout_constraintTop_toTopOf="@id/textViewTimeDistanceEdit" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<include
+			android:id="@+id/layoutTimeDistancePicker"
+			layout="@layout/time_picker_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:minWidth="106dp"
+			app:layout_constraintStart_toStartOf="@+id/textViewEditDataLabel"
+			app:layout_constraintTop_toBottomOf="@id/textViewEditDataLabel" />
+
+
+		<TextView
+			android:id="@+id/textViewEditCardioAttribute1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:fontFamily="@font/os"
+			android:text="@string/speed_colon"
+			android:textColor="@color/black"
+			android:textSize="@dimen/cardio_edit_dialog_text_size"
+			app:layout_constraintBottom_toBottomOf="@id/layoutPickerCardioAttribute1"
+			app:layout_constraintEnd_toStartOf="@id/layoutPickerCardioAttribute1"
+			app:layout_constraintTop_toTopOf="@id/layoutPickerCardioAttribute1" />
+
+		<include
+			android:id="@+id/layoutPickerCardioAttribute1"
+			layout="@layout/time_picker_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:minWidth="106dp"
+			app:layout_constraintStart_toStartOf="@id/layoutTimeDistancePicker"
+			app:layout_constraintTop_toBottomOf="@id/layoutTimeDistancePicker" />
+
+		<TextView
+			android:id="@+id/textViewEditCardioAttribute2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:fontFamily="@font/os"
+			android:text="@string/speed_colon"
+			android:textColor="@color/black"
+			android:textSize="@dimen/cardio_edit_dialog_text_size"
+			app:layout_constraintBottom_toBottomOf="@id/layoutPickerCardioAttribute2"
+			app:layout_constraintEnd_toStartOf="@id/layoutPickerCardioAttribute2"
+			app:layout_constraintTop_toTopOf="@id/layoutPickerCardioAttribute2" />
+
+		<TextView
+			android:id="@+id/textViewMinsPerMeter"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/os_semi_bold"
+			android:text="@string/mins_500_meters"
+			android:textColor="@color/black"
+			android:textSize="12sp"
+			android:visibility="gone"
+			app:layout_constraintEnd_toEndOf="@id/textViewEditCardioAttribute2"
+			app:layout_constraintTop_toBottomOf="@id/textViewEditCardioAttribute2" />
+
+
+		<include
+			android:id="@+id/layoutPickerCardioAttribute2"
+			layout="@layout/time_picker_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:minWidth="106dp"
+			app:layout_constraintStart_toStartOf="@id/layoutPickerCardioAttribute1"
+			app:layout_constraintTop_toBottomOf="@id/layoutPickerCardioAttribute1" />
+
+		<TextView
+			android:id="@+id/textViewEditCardioAttribute3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="8dp"
+			android:fontFamily="@font/os"
+			android:text="@string/speed_colon"
+			android:textColor="@color/black"
+			android:textSize="@dimen/cardio_edit_dialog_text_size"
+			app:layout_constraintBottom_toBottomOf="@id/layoutPickerCardioAttribute3"
+			app:layout_constraintEnd_toStartOf="@id/layoutPickerCardioAttribute3"
+			app:layout_constraintTop_toTopOf="@id/layoutPickerCardioAttribute3" />
+
+		<include
+			android:id="@+id/layoutPickerCardioAttribute3"
+			layout="@layout/time_picker_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:minWidth="106dp"
+			app:layout_constraintStart_toStartOf="@id/layoutPickerCardioAttribute2"
+			app:layout_constraintTop_toBottomOf="@id/layoutPickerCardioAttribute2" />
+
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/transparent">
+
+	<View
+		android:id="@+id/divider"
+		android:layout_width="0dp"
+		android:layout_height="0.7dp"
+		android:background="@color/gray"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/header"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/selectedBackground"
+		android:layout_width="0dp"
+		android:layout_height="@dimen/custom_50dp"
+		android:background="@drawable/blue_rounded_background"
+		android:visibility="gone"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@+id/header"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/header"
+		android:layout_width="0dp"
+		android:layout_height="53dp"
+		android:layout_marginHorizontal="1.7dp"
+		android:background="@color/transparent"
+		android:elevation="40dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/divider">
+		
+		<View
+			android:id="@+id/iconContainer"
+			android:layout_width="43dp"
+			android:layout_height="43dp"
+			android:layout_marginStart="6dp"
+			android:background="@drawable/circle_orange_background"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<ImageView
+			android:id="@+id/iconView"
+			android:layout_width="0dp"
+			android:layout_height="33dp"
+			android:contentDescription="@null"
+			app:layout_constraintDimensionRatio="h,1:1"
+			app:layout_constraintStart_toStartOf="@id/iconContainer"
+			app:layout_constraintEnd_toEndOf="@id/iconContainer"
+			app:layout_constraintTop_toTopOf="@id/iconContainer"
+			app:layout_constraintBottom_toBottomOf="@id/iconContainer"/>
+
+		<TextView
+			android:id="@+id/titleView"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="8dp"
+			android:fontFamily="@font/os_semi_bold"
+			android:textColor="@color/black"
+			android:textSize="18.3sp"
+			android:text="Subcategory 1"
+			tools:ignore="HardcodedText"
+			app:layout_constraintStart_toEndOf="@+id/iconView"
+			app:layout_constraintEnd_toStartOf="@+id/expandBtn"
+			app:layout_constraintTop_toTopOf="@id/iconView"
+			app:layout_constraintBottom_toBottomOf="@id/iconView"/>
+
+		<ImageView
+			android:id="@+id/expandBtn"
+			android:layout_width="@dimen/custom_14dp"
+			android:layout_height="@dimen/custom_7dp"
+			android:layout_marginEnd="@dimen/custom_14dp"
+			android:background="@color/transparent"
+			android:contentDescription="@null"
+			android:src="@drawable/icon_dropdown"
+			android:tint="@color/colorPrimary"
+			app:layout_constraintBottom_toBottomOf="@id/iconView"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="@id/iconView" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<net.cachapa.expandablelayout.ExpandableLayout
+		android:id="@+id/exerciseListContainer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:background="@color/transparent"
+		android:elevation="40dp"
+		app:el_duration="200"
+		app:el_expanded="false"
+		app:layout_constraintStart_toStartOf="@id/header"
+		app:layout_constraintEnd_toEndOf="@id/header"
+		app:layout_constraintTop_toBottomOf="@id/header"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<include
+				android:id="@+id/emptyFavorites"
+				layout="@layout/subcategory_empty_list_item"
+				android:visibility="gone"/>
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/recyclerViewExercises"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				tools:listitem="@layout/subcategory_exercise_list_item"
+				android:background="@color/transparent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</net.cachapa.expandablelayout.ExpandableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

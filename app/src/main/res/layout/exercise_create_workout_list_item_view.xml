@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/checkboxContainer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<ImageView
+			android:id="@+id/checkbox"
+			android:layout_width="18dp"
+			android:layout_height="18dp"
+			android:src="@drawable/check_box_not_selected"
+			android:contentDescription="@null"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"/>
+
+		<ImageView
+			android:id="@+id/superSetIndexIndicator"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:src="@drawable/checkbox_1"
+			android:contentDescription="@null"
+			android:visibility="gone"
+			app:layout_constraintStart_toStartOf="@+id/checkbox"
+			app:layout_constraintEnd_toEndOf="@+id/checkbox"
+			app:layout_constraintTop_toTopOf="@+id/checkbox"
+			app:layout_constraintBottom_toBottomOf="@+id/checkbox"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.cardview.widget.CardView
+		android:id="@+id/headerContainer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="6dp"
+		android:layout_marginEnd="4dp"
+		android:layout_marginBottom="10dp"
+		app:cardCornerRadius="3dp"
+		app:layout_constraintStart_toEndOf="@+id/checkboxContainer"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<RelativeLayout
+				android:id="@+id/checkedStateView"
+				android:layout_width="6dp"
+				android:layout_height="0dp"
+				android:background="@color/colorPrimary"
+				android:visibility="gone"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/exerciseHeaderList"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				tools:listitem="@layout/exercise_create_workout_header_item_view"
+				app:layout_constraintStart_toEndOf="@id/checkedStateView"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/superSetContainer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="5dp"
+		android:layout_marginEnd="6dp"
+		android:elevation="10dp"
+		app:layout_constraintEnd_toEndOf="@id/headerContainer"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageView
+			android:id="@+id/addDifferentSuperSetBtn"
+			android:layout_width="20dp"
+			android:layout_height="30dp"
+			android:layout_marginEnd="15dp"
+			android:adjustViewBounds="true"
+			android:scaleType="centerCrop"
+			android:contentDescription="@null"
+			android:src="@drawable/icon_hand"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/unlinkSuperSetBtn"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<ImageView
+			android:id="@+id/unlinkSuperSetBtn"
+			android:layout_width="wrap_content"
+			android:layout_height="30dp"
+			android:adjustViewBounds="true"
+			android:scaleType="centerCrop"
+			android:contentDescription="@null"
+			android:src="@drawable/super_set_indicator"
+			app:layout_constraintStart_toEndOf="@id/addDifferentSuperSetBtn"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<ImageView
+		android:id="@+id/createDifferentSuperSetBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="@dimen/resistance_add_different_superset_hand_height"
+		android:adjustViewBounds="true"
+		android:layout_marginEnd="15dp"
+		android:layout_centerVertical="true"
+		android:layout_alignParentEnd="true"
+		android:src="@drawable/icon_hand"
+		android:elevation="10dp"
+		app:layout_constraintDimensionRatio="H,1:1"
+		app:layout_constraintEnd_toEndOf="@id/headerContainer"
+		app:layout_constraintTop_toTopOf="@id/headerContainer"
+		app:layout_constraintBottom_toBottomOf="@id/headerContainer"
+		android:contentDescription="@null" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

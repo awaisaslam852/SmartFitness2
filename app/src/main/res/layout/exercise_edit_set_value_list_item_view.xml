@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:paddingHorizontal="5dp">
+
+	<TextView
+		android:id="@+id/valueTitleView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="17sp"
+		android:textColor="@color/colorPrimary"
+		android:text="Drop1"
+		tools:ignore="HardcodedText"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/valuePickerView"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/valuePickerView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="50dp"
+		android:layout_marginTop="5dp"
+		android:padding="5dp"
+		android:background="@drawable/gray_stroke_rounded_button_background"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/valueTitleView"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<TextView
+			android:id="@+id/pickerValueView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/os"
+			android:text="15.0"
+			tools:ignore="HardcodedText"
+			android:textColor="@color/edit_gray_color"
+			android:textSize="16sp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toTopOf="@id/pickerDropDownIcon"/>
+
+		<ImageView
+			android:id="@+id/pickerDropDownIcon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:contentDescription="@null"
+			android:src="@drawable/icon_dropdown"
+			android:tint="@color/picker_dropdown_color"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/pickerValueView"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

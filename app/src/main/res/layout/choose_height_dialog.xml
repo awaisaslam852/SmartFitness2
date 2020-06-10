@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/layoutEditTransparent"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/white">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		android:background="@drawable/popup_rounded_background"
+		android:minHeight="320dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent">
+
+		<TextView
+			android:id="@+id/cancelBtn"
+			style="@style/BottomSheetButtonStyle"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="16dp"
+			android:text="@string/cancel"
+			app:layout_constraintEnd_toStartOf="@id/textViewEditDataLabel"
+			app:layout_constraintHorizontal_chainStyle="spread_inside"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/textViewEditDataLabel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:fontFamily="@font/os_semi_bold_italic"
+			android:text="@string/height"
+			android:textColor="@color/black"
+			android:textSize="20sp"
+			app:layout_constraintEnd_toStartOf="@+id/saveBtn"
+			app:layout_constraintStart_toEndOf="@id/cancelBtn"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/saveBtn"
+			style="@style/BottomSheetButtonStyle"
+			android:layout_marginEnd="16dp"
+			android:textColor="@color/colorPrimary"
+			android:text="@string/save"
+			app:layout_constraintBottom_toBottomOf="@id/cancelBtn"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/textViewEditDataLabel"
+			app:layout_constraintTop_toTopOf="@id/cancelBtn" />
+
+
+		<com.shawnlin.numberpicker.NumberPicker
+			android:id="@+id/numberPickerHeight"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:elevation="8dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/textViewEditDataLabel"
+			app:np_dividerColor="@color/transparent"
+			app:np_selectedTextColor="@color/black"
+			app:np_textSize="16sp" />
+
+		<TextView
+			android:id="@+id/textView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/cm"
+			app:layout_constraintBottom_toBottomOf="@id/numberPickerHeight"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/numberPickerHeight"
+			app:layout_constraintTop_toTopOf="@id/numberPickerHeight" />
+
+		<View
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:background="@drawable/orange_frame"
+			app:layout_constraintBottom_toBottomOf="@id/numberPickerHeight"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent="0.2"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@id/numberPickerHeight"
+			app:layout_constraintWidth_percent="0.7" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

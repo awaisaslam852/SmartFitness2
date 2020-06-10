@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "371077871536",
+    "firebase_url": "https://smartfitness.firebaseio.com",
+    "project_id": "smartfitness",
+    "storage_bucket": "smartfitness.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371077871536:android:7834f44617d38a47034875",
+        "android_client_info": {
+          "package_name": "com.axles.smartfitness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371077871536-qd79d3namqndf7fadkpn6sf57klphdku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.axles.smartfitness",
+            "certificate_hash": "e4dc62c57795dbea536a4f49a56d8de68b246d82"
+          }
+        },
+        {
+          "client_id": "371077871536-qq6v8phbjr73ag4lqe4isv5i4rg1idpl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTP9d8_vATTIwq2CHrNB0K4Jrkj-Mitn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371077871536-qq6v8phbjr73ag4lqe4isv5i4rg1idpl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "371077871536-bb6qgm4u6m3p29lemvkp8fgdlrclg69p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.SmartFitnessApp.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

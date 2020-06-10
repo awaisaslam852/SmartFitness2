@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:background="@drawable/gray_stroke_rounded_button_background">
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical"
+		tools:ignore="MissingConstraints">
+
+		<TextView
+			android:id="@+id/valueView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
+			android:fontFamily="@font/os"
+			android:text="15.0"
+			android:textColor="@color/edit_gray_color"
+			android:textSize="16sp"/>
+
+		<ImageView
+			android:id="@+id/dropDownIcon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginEnd="8dp"
+			android:contentDescription="@null"
+			android:src="@drawable/icon_dropdown"
+			android:tint="@color/picker_dropdown_color"/>
+
+	</LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

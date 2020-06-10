@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#10B2EB</color>
+    <color name="colorPrimaryDark">#0E3F68</color>
+    <color name="colorAccent">#FF9800</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="blue_stroke_color">#11c2f9</color>
+    <color name="blue_gradient_start">#10B2EB</color>
+    <color name="blue_gradient_end">#20C7E7</color>
+
+    <color name="orange_gradient_start">#ffad51</color>
+    <color name="orange_gradient_end">#ffcd2c</color>
+    <color name="orange_pale">#ffb352</color>
+
+    <color name="selected_nav_item_color">#66b1b1b1</color>
+    <color name="picker_dropdown_color">#b1b1b1</color>
+    <color name="edit_gray_color">#b4b4b4</color>
+    <color name="gray_picker_color">#d6d6d6</color>
+    <color name="gray_picker_color_inactive">#f6f6f6</color>
+
+    <color name="hint_transparent">#7d010101</color>
+    <color name="fragment_transparent">#4D000000</color>
+    <color name="black_semitransparent">#b3000000</color>
+    <color name="black">#000000</color>
+    <color name="black_transparent">#8A8A8A</color>
+    <color name="transparent">#00000000</color>
+    <color name="textDark">#141414</color>
+    <color name="textDarkLighter">#9d9d9d</color>
+    <color name="textGray">#bbbbbb</color>
+    <color name="textBlue">#10b3eb</color>
+    <color name="screenPremium">#10b3eb</color>
+    <color name="textYellow">#ffb352</color>
+
+    <color name="drag_here_color">#777777</color>
+    <color name="secondary_text_color">#535353</color>
+
+    <color name="layout_background">#efefef</color>
+    <color name="almost_white_background">#fbfbfb</color>
+    <color name="note_background">#d7d7d7</color>
+
+    <color name="progress_story_start_color">#BEBDBD</color>
+    <color name="progress_story_center_color">#E1E1E1</color>
+    <color name="progress_story_end_color">#FFFFFF</color>
+
+    <color name="gray">#ebebeb</color>
+    <color name="dark_gray">#b2b2b2</color>
+    <color name="dark_gray_transparent">#f3b2b2b2</color>
+    <color name="orange_off">#ffb352</color>
+    <color name="dark_black_transparent">#f3000000</color>
+    <color name="dark_light_transparent">#80000000</color>
+    <color name="black_opacity_60">#99000000</color>
+    <color name="search_text_color">#838383</color>
+
+    <color name="selected_muscle_type_title_background">#10b2eb</color>
+    <color name="own_exercise_container_background">#66000000</color>
+
+    <color name="picker_value_color">#6c6c6c</color>
+</resources>

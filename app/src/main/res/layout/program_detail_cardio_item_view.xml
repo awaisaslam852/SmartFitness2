@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<TextView
+		android:id="@+id/titleView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="@font/os_semi_bold"
+		android:textSize="@dimen/custom_18sp"
+		android:textColor="@color/black"
+		android:text="Running / Walking"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/custom_10dp"
+		android:background="@drawable/gray_bordered_round_background"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/titleView"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/header"
+			android:layout_width="0dp"
+			android:layout_height="38dp"
+			android:background="@drawable/blue_top_rounded_background"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerTimeDistanceContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				app:layout_constraintHorizontal_weight="1.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/headerSpeedContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					android:id="@+id/headerTimeDistanceView"
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:includeFontPadding="false"
+					android:text="@string/time"
+					app:layout_constraintVertical_chainStyle="packed"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toTopOf="@id/headerSmallDistanceView"/>
+
+				<TextView
+					android:id="@+id/headerSmallDistanceView"
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:layout_marginTop="-5dp"
+					android:textSize="15sp"
+					android:text="@string/divider_distance"
+					app:layout_constraintVertical_chainStyle="packed"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/headerTimeDistanceView"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerSpeedContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerTimeDistanceContainer"
+				app:layout_constraintEnd_toStartOf="@id/headerResistanceContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/speed"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerResistanceContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="gone"
+				app:layout_constraintHorizontal_weight="1.5"
+				app:layout_constraintStart_toEndOf="@id/headerSpeedContainer"
+				app:layout_constraintEnd_toStartOf="@id/headerInclineContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/resistance"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerInclineContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerResistanceContainer"
+				app:layout_constraintEnd_toStartOf="@id/headerStyleContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/incline"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerStyleContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="gone"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerInclineContainer"
+				app:layout_constraintEnd_toStartOf="@id/headerExerciseContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/style"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerExerciseContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="gone"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerStyleContainer"
+				app:layout_constraintEnd_toStartOf="@id/headerIntensityContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/exercise"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerIntensityContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="gone"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerExerciseContainer"
+				app:layout_constraintEnd_toStartOf="@id/headerPaceContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/intensity"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerPaceContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerIntensityContainer"
+				app:layout_constraintEnd_toStartOf="@+id/headerStepsContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/pace"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerStepsContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="gone"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerPaceContainer"
+				app:layout_constraintEnd_toStartOf="@+id/headerSpmContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/steps"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerSpmContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="gone"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerStepsContainer"
+				app:layout_constraintEnd_toStartOf="@id/headerRpmContainer"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/spm_asterisk"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/headerRpmContainer"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:visibility="gone"
+				app:layout_constraintHorizontal_weight="1"
+				app:layout_constraintStart_toEndOf="@id/headerSpmContainer"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					style="@style/ProgramViewCardioHeaderTextStyle"
+					android:text="@string/rpm_asterisk"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/activitiesRecyclerView"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+			tools:listitem="@layout/program_detail_cardio_activity_list_item_view"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/header"/>
+
+		<TextView
+			android:id="@+id/totalTimeView"
+			style="@style/ProgramViewCardioHeaderTextStyle"
+			android:layout_marginTop="@dimen/custom_10dp"
+			android:layout_marginEnd="@dimen/custom_6dp"
+			android:textColor="@color/colorPrimary"
+			android:text="Totle Time: 22:30"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/activitiesRecyclerView"/>
+
+		<TextView
+			android:id="@+id/totalDistanceView"
+			style="@style/ProgramViewCardioHeaderTextStyle"
+			android:layout_marginEnd="@dimen/custom_6dp"
+			android:textColor="@color/colorPrimary"
+			android:text="Totle Distance: 13.8"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/totalTimeView"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

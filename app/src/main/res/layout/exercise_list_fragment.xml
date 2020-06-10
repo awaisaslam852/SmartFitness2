@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/topBar"
+		style="@style/TopBar"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageButton
+			android:id="@+id/topBarBackBtn"
+			style="@style/TopBarButton"
+			android:layout_marginStart="@dimen/custom_12dp"
+			android:contentDescription="@null"
+			android:src="@drawable/icon_arrow_start"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<TextView
+			android:id="@+id/topBarTitleView"
+			style="@style/TopBarTitle"
+			android:text="@string/exercise"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<TextView
+			android:id="@+id/topBarDoneBtn"
+			style="@style/TopBarButton"
+			android:layout_marginEnd="@dimen/custom_15dp"
+			android:text="@string/done"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<TextView
+		android:id="@+id/textViewExercisesNotFound"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="@font/os_bold"
+		android:text="@string/no_exercises_found"
+		android:textColor="@color/black"
+		android:textSize="23.3sp"
+		app:layout_constraintBottom_toTopOf="@+id/textViewClickTheButtonToAdd"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.39"
+		app:layout_constraintVertical_chainStyle="packed" />
+
+	<TextView
+		android:id="@+id/textViewClickTheButtonToAdd"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="@font/os"
+		android:text="@string/click_the_button_to_add"
+		android:textColor="@color/black"
+		android:textSize="20sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/textViewExercisesNotFound" />
+
+	<ImageView
+		android:id="@+id/muscleTypeBackgroundView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:elevation="0dp"
+		android:maxHeight="380dp"
+		android:src="@drawable/semitransparent_legs"
+		android:contentDescription="@null"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent" />
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/exercisesList"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginTop="35dp"
+		android:paddingBottom="75dp"
+		android:clipToPadding="false"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/topBar"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<androidx.constraintlayout.widget.Barrier
+		android:id="@+id/bottomButtonBarrier"
+		android:layout_width="wrap_content"
+		android:layout_height="0dp"
+		app:barrierDirection="top"
+		app:constraint_referenced_ids="buttonAddNewExercise,workoutMethodsBtn,buttonAddMoreExercises"/>
+
+	<Button
+		android:id="@+id/buttonAddNewExercise"
+		style="@style/OrangeButton"
+		android:paddingHorizontal="18dp"
+		android:text="@string/add_new_exercise"
+		android:visibility="visible"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"/>
+
+	<Button
+		android:id="@+id/workoutMethodsBtn"
+		style="@style/OrangeButton"
+		android:layout_marginStart="24dp"
+		android:paddingHorizontal="15.3dp"
+		android:text="@string/workout_methods"
+		android:visibility="visible"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/buttonAddMoreExercises"
+		app:layout_constraintStart_toStartOf="parent"/>
+
+	<Button
+		android:id="@+id/buttonAddMoreExercises"
+		style="@style/OrangeButton"
+		android:paddingHorizontal="26.3dp"
+		android:layout_marginStart="20dp"
+		android:layout_marginEnd="24dp"
+		android:background="@drawable/orange_thin_stroke_rounded_button_background"
+		android:text="@string/add_exercise_s"
+		android:textColor="@color/colorAccent"
+		android:visibility="visible"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/workoutMethodsBtn"
+		app:layout_constraintTop_toTopOf="@+id/workoutMethodsBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

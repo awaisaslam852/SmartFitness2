@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.resistance.exercise.CreateWorkoutMethodFragment">
+
+	<include
+		android:id="@+id/topBar"
+		layout="@layout/toolbar_title_cancel"/>
+
+	<ImageView
+		android:id="@+id/muscleTypeBackgroundView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:elevation="0dp"
+		android:maxHeight="380dp"
+		android:src="@drawable/semitransparent_legs"
+		android:contentDescription="@null"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentBottom="true"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/exercisesList"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginStart="11.3dp"
+		android:layout_marginEnd="12dp"
+		android:layout_marginTop="16dp"
+		android:paddingBottom="75dp"
+		android:clipToPadding="false"
+		android:background="@color/transparent"
+		tools:listitem="@layout/exercise_create_workout_list_item_view"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/topBar"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/bottomButtonContainer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<Button
+			android:id="@+id/createWorkoutBtn"
+			style="@style/OrangeButton"
+			android:layout_width="180dp"
+			android:layout_marginEnd="10dp"
+			android:text="@string/add_new_exercise"
+			android:textAllCaps="false"
+			android:textColor="@color/white"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/createSuperSetBtn"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<Button
+			android:id="@+id/createSuperSetBtn"
+			style="@style/OrangeButton"
+			android:layout_width="180dp"
+			android:layout_marginEnd="10dp"
+			android:text="@string/create_super_set"
+			app:layout_constraintStart_toEndOf="@id/createWorkoutBtn"
+			app:layout_constraintEnd_toStartOf="@id/finishBtn"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<Button
+			android:id="@+id/finishBtn"
+			style="@style/OrangeButton"
+			android:layout_width="180dp"
+			android:text="@string/finish"
+			app:layout_constraintStart_toEndOf="@id/createSuperSetBtn"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screenPremium">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/premiumBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/premium_screen_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/closeFragment"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="@dimen/unit2x"
+            android:contentDescription="@null"
+            android:padding="@dimen/unit"
+            android:src="@drawable/icon_cross"
+            app:layout_constraintEnd_toEndOf="@id/premiumBackground"
+            app:layout_constraintTop_toTopOf="@id/premiumBackground" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/os_bold_italic"
+            android:lines="2"
+            android:text="@string/the_best_gift_you_can_give_yourself"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@id/premiumBackground"
+            app:layout_constraintEnd_toEndOf="@id/premiumBackground"
+            app:layout_constraintStart_toStartOf="@id/premiumBackground"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <ImageView
+            android:id="@+id/videosIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/unit2x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_videos"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@id/premiumBackground" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit2x"
+            android:fontFamily="@font/os"
+            android:text="@string/all_exercise_videos"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/videosIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/videosIcon"
+            app:layout_constraintTop_toTopOf="@id/videosIcon"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <ImageView
+            android:id="@+id/noAdsIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/unit2x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_no_ads"
+            app:layout_constraintStart_toStartOf="@+id/videosIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit2x"
+            android:fontFamily="@font/os"
+            android:text="@string/remove_ads"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/noAdsIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/noAdsIcon"
+            app:layout_constraintTop_toTopOf="@id/noAdsIcon"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <ImageView
+            android:id="@+id/customizedWorkoutsIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/unit2x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_customized_workouts"
+            app:layout_constraintStart_toStartOf="@+id/noAdsIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit2x"
+            android:fontFamily="@font/os"
+            android:text="@string/customized_workout_methods"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/customizedWorkoutsIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/customizedWorkoutsIcon"
+            app:layout_constraintTop_toTopOf="@id/customizedWorkoutsIcon" />
+
+        <ImageView
+            android:id="@+id/shareIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/unit2x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_share"
+            app:layout_constraintStart_toStartOf="@+id/customizedWorkoutsIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit2x"
+            android:fontFamily="@font/os"
+            android:text="@string/share_unlimited_programs_with_friends"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/shareIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/shareIcon"
+            app:layout_constraintTop_toTopOf="@id/shareIcon"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <ImageView
+            android:id="@+id/timerIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="@dimen/unit2x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_timer"
+            app:layout_constraintStart_toStartOf="@+id/shareIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit2x"
+            android:fontFamily="@font/os"
+            android:text="@string/interval_timer_inside_the_programs"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/timerIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/timerIcon"
+            app:layout_constraintTop_toTopOf="@id/timerIcon"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <View
+            android:id="@+id/trialView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/unit4x"
+            android:layout_marginTop="@dimen/unit2x"
+            android:layout_marginEnd="@dimen/unit"
+            android:layout_marginBottom="@dimen/unit2x"
+            android:background="@drawable/white_filled_frame"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fullPriceView"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toEndOf="@+id/fullPriceView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tryItNow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/os_semi_bold"
+            android:text="@string/try_it_now"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#10b3eb"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/sevedDayaTrial"
+            app:layout_constraintEnd_toEndOf="@id/trialView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/trialView"
+            app:layout_constraintTop_toBottomOf="@+id/trialView" />
+
+        <TextView
+            android:id="@+id/sevedDayaTrial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit2x"
+            android:text="@string/_7_days_trial"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/trialView"
+            app:layout_constraintEnd_toEndOf="@id/trialView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/trialView"
+            app:layout_constraintTop_toBottomOf="@+id/tryItNow" />
+
+        <View
+            android:id="@+id/fullPriceView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/unit"
+            android:layout_marginEnd="@dimen/unit4x"
+            android:background="@drawable/white_filled_frame"
+            app:layout_constraintBottom_toBottomOf="@+id/trialView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/trialView"
+            app:layout_constraintTop_toTopOf="@+id/trialView" />
+
+        <TextView
+            android:id="@+id/offTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/orange_off"
+            android:fontFamily="@font/os_semi_bold"
+            android:text="@string/_50_off"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="@+id/fullPriceView"
+            app:layout_constraintStart_toStartOf="@+id/fullPriceView"
+            app:layout_constraintTop_toTopOf="@+id/fullPriceView" />
+
+        <TextView
+            android:id="@+id/monthsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit2x"
+            android:fontFamily="@font/os_semi_bold"
+            android:text="@string/_12_months"
+            android:textAlignment="center"
+            android:textColor="@color/textBlue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/fullPriceView"
+            app:layout_constraintStart_toStartOf="@+id/fullPriceView"
+            app:layout_constraintTop_toBottomOf="@id/offTextView" />
+
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit"
+            android:fontFamily="@font/os_semi_bold"
+            android:text="@string/_2_49"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/fullPriceView"
+            app:layout_constraintStart_toStartOf="@+id/fullPriceView"
+            app:layout_constraintTop_toBottomOf="@id/monthsTextView" />
+
+        <TextView
+            android:id="@+id/perUnitTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit"
+            android:fontFamily="@font/os_semi_bold"
+            android:text="@string/per_month"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/fullPriceView"
+            app:layout_constraintStart_toStartOf="@+id/fullPriceView"
+            app:layout_constraintTop_toBottomOf="@id/priceTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

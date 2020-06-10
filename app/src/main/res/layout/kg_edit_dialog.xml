@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/transparent"
+	app:behavior_hideable="true"
+	app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/search_bar_rounded_shape"
+		android:backgroundTint="@color/white"
+		android:gravity="bottom|center_horizontal"
+		android:padding="10dp">
+
+		<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<TextView
+				android:id="@+id/cancelBtn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="#f3b2b2b2"
+				android:textSize="15sp"
+				android:text="@string/cancel"/>
+
+			<TextView
+				android:id="@+id/saveBtn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentEnd="true"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="@color/colorPrimary"
+				android:textSize="15sp"
+				android:text="@string/save"/>
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="35dp"
+			android:layout_marginTop="16dp"
+			android:gravity="center_vertical">
+
+			<ImageView
+				android:id="@+id/topBarBackBtn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/arrow_back"/>
+
+			<TextView
+				android:id="@+id/topBarTitleView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_centerHorizontal="true"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="#000000"
+				android:textSize="18sp"
+				android:textAlignment="center"
+				android:text="@string/superset_with" />
+
+			<ImageView
+				android:id="@+id/nextBtn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/arrow_next"/>
+
+		</LinearLayout>
+
+		<androidx.viewpager2.widget.ViewPager2
+			android:id="@+id/setsViewPager"
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="340dp"
+			android:layout_marginTop="11dp"
+			tools:listitem="@layout/exercise_edit_set_vertical_list_item_view"/>
+
+	</LinearLayout>
+
+</LinearLayout>

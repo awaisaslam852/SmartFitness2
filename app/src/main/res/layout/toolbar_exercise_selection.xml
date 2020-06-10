@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/toolbarSelectExercises"
+	style="@style/TopBar">
+
+
+	<TextView
+		android:id="@+id/topBarTitleView"
+		style="@style/TopBarTitle"
+		android:text="@string/exercise"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toStartOf="@id/topBarSearchBtn"
+		app:layout_constraintStart_toEndOf="@id/topBarBackBtn"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+
+	<ImageButton
+		android:id="@+id/topBarBackBtn"
+		style="@style/TopBarButton"
+		android:layout_marginStart="@dimen/custom_10dp"
+		android:padding="2dp"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_arrow_start"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<ImageButton
+		android:id="@+id/topBarSearchBtn"
+		style="@style/TopBarButton"
+		android:layout_marginEnd="16.3dp"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_search"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

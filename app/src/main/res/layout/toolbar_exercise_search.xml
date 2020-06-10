@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/toolbarSearchExercises"
+	style="@style/TopBar">
+
+	<ImageView
+		android:id="@+id/topBarBackBtn"
+		style="@style/TopBarButton"
+		android:layout_marginStart="16dp"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_arrow_start"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="0dp"
+		android:layout_height="36dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginEnd="8dp"
+		android:background="@drawable/search_bar_rounded_shape"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/topBarBackBtn"
+		app:layout_constraintTop_toTopOf="parent" >
+
+		<EditText
+			android:id="@+id/editTextSearch"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:paddingHorizontal="8dp"
+			android:focusableInTouchMode="true"
+			android:imeOptions="actionSearch"
+			android:importantForAutofill="no"
+			android:inputType="text|textNoSuggestions"
+			android:fontFamily="@font/os"
+			android:hint="@string/search_s_exercises"
+			android:maxLines="1"
+			android:textColor="@color/black"
+			android:textColorHint="@color/black_semitransparent"
+			android:textSize="17sp"
+			android:background="@null"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/clearSearchBtn"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/clearSearchBtn"
+			android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:padding="10dp"
+			android:adjustViewBounds="true"
+			android:src="@drawable/search_clear"
+			android:contentDescription="@null"
+			android:visibility="gone"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<TextView
+		android:id="@+id/textViewChooseProgramLabel"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="19dp"
+		android:fontFamily="@font/os_bold"
+		android:textAlignment="center"
+		android:textColor="@color/black"
+		android:textSize="19sp"
+		android:text="@string/choose_a_training_program_and_start_building"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/buttonContainer"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="16dp"
+		android:layout_marginTop="37dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/textViewChooseProgramLabel">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/resistanceBtn"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:background="@drawable/training_program_type_button_background"
+			app:layout_constraintDimensionRatio="h,100:85"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/resistanceIconContainer"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:layout_marginTop="16dp"
+				android:background="@drawable/circle_orange_background"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:id="@+id/resistanceIconView"
+					android:layout_width="wrap_content"
+					android:layout_height="20dp"
+					android:adjustViewBounds="true"
+					android:contentDescription="@null"
+					android:src="@drawable/biceps"
+					android:background="@drawable/circle_orange_gradient_background"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<TextView
+				android:id="@+id/resistanceTitleLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginVertical="8dp"
+				android:fontFamily="@font/os"
+				android:textAlignment="center"
+				android:textColor="@color/white"
+				android:textSize="16sp"
+				android:text="@string/resistance_n_training"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/resistanceIconContainer"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/circuitBtn"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginStart="8dp"
+			android:background="@drawable/training_program_type_button_background"
+			app:layout_constraintDimensionRatio="h,100:85"
+			app:layout_constraintStart_toEndOf="@+id/resistanceBtn"
+			app:layout_constraintTop_toTopOf="@id/resistanceBtn"
+			app:layout_constraintBottom_toBottomOf="@id/resistanceBtn">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/circuitIconContainer"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:layout_marginTop="16dp"
+				android:background="@drawable/circle_orange_background"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:id="@+id/circuitIconView"
+					android:layout_width="wrap_content"
+					android:layout_height="0dp"
+					android:layout_marginVertical="2dp"
+					android:adjustViewBounds="true"
+					android:contentDescription="@null"
+					android:src="@drawable/icon_circuit"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<TextView
+				android:id="@+id/circuitTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/os"
+				android:text="@string/circuit_n_training"
+				android:textAlignment="center"
+				android:textColor="@color/white"
+				android:textSize="16sp"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/circuitIconContainer"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/cardIoBtn"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginStart="8dp"
+			android:background="@drawable/training_program_type_button_background"
+			app:layout_constraintDimensionRatio="h,100:85"
+			app:layout_constraintStart_toEndOf="@+id/circuitBtn"
+			app:layout_constraintTop_toTopOf="@id/resistanceBtn"
+			app:layout_constraintBottom_toBottomOf="@id/resistanceBtn">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/cardioIconContainer"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:layout_marginTop="16dp"
+				android:background="@drawable/circle_orange_background"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent">
+
+				<ImageView
+					android:id="@+id/cardioIconView"
+					android:layout_width="wrap_content"
+					android:layout_height="0dp"
+					android:layout_marginVertical="7dp"
+					android:adjustViewBounds="true"
+					android:contentDescription="@null"
+					android:src="@drawable/man_icon"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<TextView
+				android:id="@+id/cardIoTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="14dp"
+				android:fontFamily="@font/os"
+				android:text="@string/cardio_n_training"
+				android:textAlignment="center"
+				android:textColor="@color/white"
+				android:textSize="16sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/cardioIconContainer" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+	<TextView
+		android:id="@+id/cancelBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="34dp"
+		android:layout_marginBottom="22dp"
+		android:fontFamily="@font/os"
+		android:text="@string/cancel"
+		android:textAlignment="center"
+		android:textColor="@color/colorPrimary"
+		android:textSize="19sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/buttonContainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

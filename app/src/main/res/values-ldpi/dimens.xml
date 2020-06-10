@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--	Custom Dp-->
+	<dimen name="custom_minus_0_7dp">-0.54dp</dimen>
+	<dimen name="custom_0_7dp">0.54dp</dimen>
+	<dimen name="custom_1dp">0.77dp</dimen>
+	<dimen name="custom_2dp">1.54dp</dimen>
+	<dimen name="custom_3dp">2.31dp</dimen>
+	<dimen name="custom_3_3dp">2.54dp</dimen>
+	<dimen name="custom_4dp">3.08dp</dimen>
+	<dimen name="custom_5dp">3.85dp</dimen>
+	<dimen name="custom_6dp">4.62dp</dimen>
+	<dimen name="custom_6_7dp">5.15dp</dimen>
+	<dimen name="custom_7dp">5.38dp</dimen>
+	<dimen name="custom_8dp">6.15dp</dimen>
+	<dimen name="custom_9dp">6.92dp</dimen>
+	<dimen name="custom_10dp">7.69dp</dimen>
+	<dimen name="custom_11dp">8.46dp</dimen>
+	<dimen name="custom_12dp">9.23dp</dimen>
+	<dimen name="custom_13dp">10dp</dimen>
+	<dimen name="custom_14dp">10.77dp</dimen>
+	<dimen name="custom_15dp">11.54dp</dimen>
+	<dimen name="custom_16dp">12.31dp</dimen>
+	<dimen name="custom_17dp">13.08dp</dimen>
+	<dimen name="custom_18dp">13.85dp</dimen>
+	<dimen name="custom_19dp">14.62dp</dimen>
+	<dimen name="custom_20dp">15.38dp</dimen>
+	<dimen name="custom_21dp">16.15dp</dimen>
+	<dimen name="custom_22dp">16.92dp</dimen>
+	<dimen name="custom_24dp">18.46dp</dimen>
+	<dimen name="custom_25dp">19.23dp</dimen>
+	<dimen name="custom_26dp">20dp</dimen>
+	<dimen name="custom_27dp">20.77dp</dimen>
+	<dimen name="custom_28dp">21.54dp</dimen>
+	<dimen name="custom_30dp">23.08dp</dimen>
+	<dimen name="custom_32dp">24.62dp</dimen>
+	<dimen name="custom_33dp">25.38dp</dimen>
+	<dimen name="custom_34dp">26.15dp</dimen>
+	<dimen name="custom_35dp">26.92dp</dimen>
+	<dimen name="custom_38dp">29.23dp</dimen>
+	<dimen name="custom_40dp">30.77dp</dimen>
+	<dimen name="custom_41dp">31.54dp</dimen>
+	<dimen name="custom_44dp">33.84dp</dimen>
+	<dimen name="custom_45dp">34.62dp</dimen>
+	<dimen name="custom_47dp">36.15dp</dimen>
+	<dimen name="custom_48dp">36.92dp</dimen>
+	<dimen name="custom_50dp">38.46dp</dimen>
+	<dimen name="custom_56dp">43.08dp</dimen>
+	<dimen name="custom_60dp">46.15dp</dimen>
+	<dimen name="custom_67dp">51.54dp</dimen>
+	<dimen name="custom_70dp">53.85dp</dimen>
+	<dimen name="custom_72dp">55.38dp</dimen>
+	<dimen name="custom_73dp">56.15dp</dimen>
+	<dimen name="custom_75dp">57.69dp</dimen>
+	<dimen name="custom_83dp">63.85dp</dimen>
+	<dimen name="custom_84dp">64.62dp</dimen>
+	<dimen name="custom_93dp">71.54dp</dimen>
+	<dimen name="custom_100dp">76.92dp</dimen>
+	<dimen name="custom_110dp">84.62dp</dimen>
+	<dimen name="custom_124dp">95.38dp</dimen>
+	<dimen name="custom_183dp">140.77dp</dimen>
+	<dimen name="custom_190dp">146.15dp</dimen>
+
+	<!--	Text Size-->
+	<dimen name="custom_11sp">8.46sp</dimen>
+	<dimen name="custom_12sp">9.23sp</dimen>
+	<dimen name="custom_13sp">10sp</dimen>
+	<dimen name="custom_14sp">10.77sp</dimen>
+	<dimen name="custom_15sp">11.54sp</dimen>
+	<dimen name="custom_16sp">12.31sp</dimen>
+	<dimen name="custom_17sp">13.08sp</dimen>
+	<dimen name="custom_18sp">13.85sp</dimen>
+	<dimen name="custom_19sp">14.62sp</dimen>
+	<dimen name="custom_20sp">15.38sp</dimen>
+	<dimen name="custom_21sp">16.15sp</dimen>
+	<dimen name="custom_23sp">17.69sp</dimen>
+	<dimen name="custom_24sp">18.46sp</dimen>
+	<dimen name="custom_27sp">20.77sp</dimen>
+
+	<dimen name="large_text">@dimen/custom_20sp</dimen>
+	<dimen name="small_text">@dimen/custom_12sp</dimen>
+	<dimen name="text_titles">@dimen/custom_18sp</dimen>
+	<dimen name="titles_text">@dimen/custom_17sp</dimen>
+	<dimen name="profile_values">@dimen/custom_19sp</dimen>
+
+	<dimen name="unit">@dimen/custom_8dp</dimen>
+	<dimen name="unit2x">@dimen/custom_16dp</dimen>
+	<dimen name="unit3x">@dimen/custom_24dp</dimen>
+	<dimen name="unit4x">@dimen/custom_32dp</dimen>
+	<dimen name="progressStoryCorners">@dimen/custom_32dp</dimen>
+
+	<dimen name="recyclerViewItemSpace">@dimen/custom_15dp</dimen>
+
+	<dimen name="select_exercise_photo_width">@dimen/custom_50dp</dimen>
+	<dimen name="select_exercise_photo_height">@dimen/custom_50dp</dimen>
+	<dimen name="exercise_photo_width">@dimen/custom_84dp</dimen>
+	<dimen name="exercise_photo_height">@dimen/custom_84dp</dimen>
+	<dimen name="exercise_title_size">@dimen/custom_17dp</dimen>
+	<dimen name="smallest_corner_radius">@dimen/custom_0_7dp</dimen>
+	<dimen name="default_corner_radius">@dimen/custom_3_3dp</dimen>
+	<dimen name="large_corner_radius">@dimen/custom_6_7dp</dimen>
+
+	<dimen name="gap_size">@dimen/custom_0_7dp</dimen>
+	<dimen name="gap_size_minus">@dimen/custom_minus_0_7dp</dimen>
+
+
+
+	<dimen name="large_orange_size">@dimen/custom_20sp</dimen>
+
+<!--	Login & Sign up-->
+	<dimen name="login_input_size">@dimen/custom_17sp</dimen>
+	<dimen name="login_input_icon_height">@dimen/custom_27dp</dimen>
+	<dimen name="login_forgot_password_size">@dimen/custom_15sp</dimen>
+	<dimen name="login_divider_size">@dimen/custom_16sp</dimen>
+	<dimen name="login_terms_size">@dimen/custom_15sp</dimen>
+
+<!--	Program View-->
+	<dimen name="picker_value_size">@dimen/custom_18sp</dimen>
+	<dimen name="rest_container_height">@dimen/custom_33dp</dimen>
+	<dimen name="rest_timer_icon_height">@dimen/custom_22dp</dimen>
+	<dimen name="rest_timer_text_height">@dimen/custom_15sp</dimen>
+
+	<dimen name="exercise_header_height">@dimen/custom_84dp</dimen>
+	<dimen name="exercise_category_list_item_height">@dimen/custom_70dp</dimen>
+	<dimen name="exercise_category_list_title_size">@dimen/custom_12sp</dimen>
+	<dimen name="exercise_detail_instruction_size">@dimen/custom_20sp</dimen>
+	<dimen name="exercise_detail_watch_video_height">@dimen/custom_27dp</dimen>
+	<dimen name="exercise_detail_watch_video_size">@dimen/custom_14sp</dimen>
+
+	<dimen name="resistance_add_different_superset_hand_height">@dimen/custom_30dp</dimen>
+
+	<dimen name="circuit_value_title_size">@dimen/custom_13sp</dimen>
+	<dimen name="circuit_picker_value_size">@dimen/custom_14sp</dimen>
+	<dimen name="circuit_add_subtitle_size">@dimen/custom_17sp</dimen>
+	<dimen name="circuit_round_title_size">@dimen/custom_18sp</dimen>
+	<dimen name="circuit_delete_round_size">@dimen/custom_13sp</dimen>
+
+	<dimen name="cardio_activity_type_height">@dimen/custom_70dp</dimen>
+	<dimen name="cardio_timer_icon_height">@dimen/custom_22dp</dimen>
+	<dimen name="cardio_normal_text_size">@dimen/custom_20sp</dimen>
+	<dimen name="cardio_small_text_size">@dimen/custom_15sp</dimen>
+	<dimen name="cardio_delete_activity_icon_height">@dimen/custom_18dp</dimen>
+	<dimen name="cardio_edit_activity_icon_height">@dimen/custom_18dp</dimen>
+	<dimen name="cardio_edit_dialog_text_size">@dimen/custom_18sp</dimen>
+
+	<dimen name="program_received_item_height">@dimen/custom_110dp</dimen>
+
+</resources>

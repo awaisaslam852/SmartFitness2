@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<androidx.cardview.widget.CardView
+		android:id="@+id/cardHolder"
+		style="@style/CircuitRoundItemViewCardHolderStyle"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/white_background_gray_bordered">
+
+			<View
+				android:id="@+id/ribbonView"
+				android:layout_width="6dp"
+				android:layout_height="match_parent"
+				android:background="@color/colorPrimary"
+				app:layout_constraintStart_toStartOf="parent"/>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				app:layout_constraintStart_toEndOf="@id/ribbonView"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent">
+
+				<TextView
+					android:id="@+id/titleView"
+					style="@style/CircuitExerciseTitleStyle"
+					android:layout_marginStart="9.3dp"
+					android:layout_marginTop="10dp"
+					android:text="@string/elliptical"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent"/>
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:id="@+id/editControlContainer"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent">
+
+					<ImageView
+						android:id="@+id/dragBtn"
+						android:layout_width="wrap_content"
+						android:layout_height="34dp"
+						android:padding="10dp"
+						android:adjustViewBounds="true"
+						android:src="@drawable/icon_drag_and_drop"
+						android:contentDescription="@null"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent"
+						app:layout_constraintBottom_toBottomOf="parent"/>
+
+					<ImageView
+						android:id="@+id/deleteBtn"
+						android:layout_width="wrap_content"
+						android:layout_height="34dp"
+						android:layout_marginStart="10dp"
+						android:padding="10dp"
+						android:adjustViewBounds="true"
+						android:scaleType="center"
+						android:tint="@color/dark_gray_transparent"
+						android:src="@drawable/icon_close_blue"
+						android:contentDescription="@null"
+						app:layout_constraintStart_toEndOf="@id/dragBtn"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintTop_toTopOf="parent"
+						app:layout_constraintBottom_toBottomOf="parent"/>
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+				<ImageView
+					android:id="@+id/photoView"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:src="@drawable/logo"
+					android:contentDescription="@null"
+					app:layout_constraintDimensionRatio="h,1:1"
+					app:layout_constraintStart_toStartOf="@id/titleView"
+					app:layout_constraintTop_toBottomOf="@id/titleView"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:id="@+id/valuesContainer"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="10dp"
+					app:layout_constraintStart_toEndOf="@id/photoView"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="@id/photoView"
+					app:layout_constraintBottom_toBottomOf="parent">
+
+					<androidx.constraintlayout.widget.ConstraintLayout
+						android:id="@+id/timeContainer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintEnd_toStartOf="@id/distanceContainer"
+						app:layout_constraintBottom_toBottomOf="parent">
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/timeTitleContainer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toTopOf="parent">
+
+							<TextView
+								android:id="@+id/timeTitleView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textSize="@dimen/circuit_value_title_size"
+								android:textColor="@color/colorPrimary"
+								android:text="Time"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintTop_toTopOf="parent"/>
+
+							<ImageView
+								android:id="@+id/timeDropDownIcon"
+								android:layout_width="9dp"
+								android:layout_height="5dp"
+								android:contentDescription="@null"
+								android:src="@drawable/icon_dropdown"
+								android:tint="@color/orange_pale"
+								android:visibility="gone"
+								app:layout_constraintStart_toEndOf="@id/timeTitleView"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/timePickerContainer"
+							style="@style/CircuitMediumPickerContainerStyle"
+							android:layout_marginTop="3.3dp"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toBottomOf="@id/timeTitleContainer">
+
+							<TextView
+								android:id="@+id/timePickerValueView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:fontFamily="@font/os"
+								android:textColor="@color/black"
+								android:textSize="@dimen/circuit_picker_value_size"
+								android:text="15.0"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"/>
+
+							<ImageView
+								android:id="@+id/timePickerIconView"
+								android:layout_width="9dp"
+								android:layout_height="5dp"
+								android:contentDescription="@null"
+								android:src="@drawable/icon_dropdown"
+								android:tint="@color/picker_dropdown_color"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toBottomOf="@+id/timePickerValueView"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+					</androidx.constraintlayout.widget.ConstraintLayout>
+
+					<androidx.constraintlayout.widget.ConstraintLayout
+						android:id="@+id/distanceContainer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:visibility="visible"
+						app:layout_constraintStart_toEndOf="@id/timeContainer"
+						app:layout_constraintEnd_toStartOf="@id/resistanceContainer"
+						app:layout_constraintBottom_toBottomOf="parent">
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/distanceTitleContainer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toTopOf="parent">
+
+							<TextView
+								android:id="@+id/distanceTitleView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textSize="@dimen/circuit_value_title_size"
+								android:textColor="@color/colorPrimary"
+								android:text="Distance"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintTop_toTopOf="parent"/>
+
+							<ImageView
+								android:id="@+id/distanceDropDownIcon"
+								android:layout_width="9dp"
+								android:layout_height="5dp"
+								android:contentDescription="@null"
+								android:src="@drawable/icon_dropdown"
+								android:tint="@color/orange_pale"
+								android:visibility="gone"
+								app:layout_constraintStart_toEndOf="@id/distanceTitleView"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/distancePickerContainer"
+							style="@style/CircuitMediumPickerContainerStyle"
+							android:layout_marginTop="3.3dp"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toBottomOf="@id/distanceTitleContainer">
+
+							<TextView
+								android:id="@+id/distancePickerValueView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:fontFamily="@font/os"
+								android:textColor="@color/black"
+								android:textSize="@dimen/circuit_picker_value_size"
+								android:text="15.0"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"/>
+
+							<ImageView
+								android:id="@+id/distancePickerIconView"
+								android:layout_width="9dp"
+								android:layout_height="5dp"
+								android:contentDescription="@null"
+								android:src="@drawable/icon_dropdown"
+								android:tint="@color/picker_dropdown_color"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toBottomOf="@+id/distancePickerValueView"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+					</androidx.constraintlayout.widget.ConstraintLayout>
+
+					<androidx.constraintlayout.widget.ConstraintLayout
+						android:id="@+id/resistanceContainer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:layout_constraintStart_toEndOf="@id/distanceContainer"
+						app:layout_constraintEnd_toStartOf="@id/inclineContainer"
+						app:layout_constraintTop_toTopOf="parent"
+						app:layout_constraintBottom_toBottomOf="parent">
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/resistanceTitleContainer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toTopOf="parent">
+
+							<TextView
+								android:id="@+id/resistanceTitleView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textSize="@dimen/circuit_value_title_size"
+								android:textColor="@color/colorPrimary"
+								android:text="Resistance"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/resistancePickerContainer"
+							style="@style/CircuitLargePickerContainerStyle"
+							android:layout_marginTop="3.3dp"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toBottomOf="@id/resistanceTitleContainer">
+
+							<TextView
+								android:id="@+id/resistancePickerValueView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:fontFamily="@font/os"
+								android:textColor="@color/black"
+								android:textSize="@dimen/circuit_picker_value_size"
+								android:text="15.0"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"/>
+
+							<ImageView
+								android:id="@+id/resistancePickerIconView"
+								android:layout_width="9dp"
+								android:layout_height="5dp"
+								android:contentDescription="@null"
+								android:src="@drawable/icon_dropdown"
+								android:tint="@color/picker_dropdown_color"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toBottomOf="@+id/resistancePickerValueView"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+					</androidx.constraintlayout.widget.ConstraintLayout>
+
+					<androidx.constraintlayout.widget.ConstraintLayout
+						android:id="@+id/inclineContainer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:layout_constraintStart_toEndOf="@id/resistanceContainer"
+						app:layout_constraintEnd_toStartOf="@id/spmContainer"
+						app:layout_constraintTop_toTopOf="parent"
+						app:layout_constraintBottom_toBottomOf="parent">
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/inclineTitleContainer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toTopOf="parent">
+
+							<TextView
+								android:id="@+id/inclineTitleView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textSize="@dimen/circuit_value_title_size"
+								android:textColor="@color/colorPrimary"
+								android:text="Incline"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/inclinePickerContainer"
+							style="@style/CircuitSmallPickerContainerStyle"
+							android:layout_marginTop="3.3dp"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toBottomOf="@id/inclineTitleContainer">
+
+							<TextView
+								android:id="@+id/inclinePickerValueView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:fontFamily="@font/os"
+								android:textColor="@color/black"
+								android:textSize="@dimen/circuit_picker_value_size"
+								android:text="15.0"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"/>
+
+							<ImageView
+								android:id="@+id/inclinePickerIconView"
+								android:layout_width="9dp"
+								android:layout_height="5dp"
+								android:contentDescription="@null"
+								android:src="@drawable/icon_dropdown"
+								android:tint="@color/picker_dropdown_color"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toBottomOf="@+id/inclinePickerValueView"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+					</androidx.constraintlayout.widget.ConstraintLayout>
+
+					<androidx.constraintlayout.widget.ConstraintLayout
+						android:id="@+id/spmContainer"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:layout_constraintStart_toEndOf="@id/inclineContainer"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintBottom_toBottomOf="@id/inclineContainer">
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/spmTitleContainer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toTopOf="parent">
+
+							<TextView
+								android:id="@+id/spmTitleView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textSize="@dimen/circuit_value_title_size"
+								android:textColor="@color/colorPrimary"
+								android:text="SPM*"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+						<androidx.constraintlayout.widget.ConstraintLayout
+							android:id="@+id/spmPickerContainer"
+							style="@style/CircuitSmallPickerContainerStyle"
+							android:layout_marginTop="3.3dp"
+							app:layout_constraintStart_toStartOf="parent"
+							app:layout_constraintEnd_toEndOf="parent"
+							app:layout_constraintTop_toBottomOf="@id/spmTitleContainer">
+
+							<TextView
+								android:id="@+id/spmPickerValueView"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:fontFamily="@font/os"
+								android:textColor="@color/black"
+								android:textSize="@dimen/circuit_picker_value_size"
+								android:text="15.0"
+								tools:ignore="HardcodedText"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toTopOf="parent"/>
+
+							<ImageView
+								android:id="@+id/spmPickerIconView"
+								android:layout_width="9dp"
+								android:layout_height="5dp"
+								android:contentDescription="@null"
+								android:src="@drawable/icon_dropdown"
+								android:tint="@color/picker_dropdown_color"
+								app:layout_constraintStart_toStartOf="parent"
+								app:layout_constraintEnd_toEndOf="parent"
+								app:layout_constraintTop_toBottomOf="@id/spmPickerValueView"
+								app:layout_constraintBottom_toBottomOf="parent"/>
+
+						</androidx.constraintlayout.widget.ConstraintLayout>
+
+					</androidx.constraintlayout.widget.ConstraintLayout>
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

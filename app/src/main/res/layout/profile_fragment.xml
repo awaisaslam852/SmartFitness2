@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/progressStorySection"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/round_corners_progress_story"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/progressImageView"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_margin="@dimen/unit2x"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_progress_photo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/progressStoryTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/unit2x"
+                    android:maxLines="1"
+                    android:text="@string/your_progress_story"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/textBlue"
+                    android:textSize="@dimen/large_text"
+                    app:layout_constraintStart_toEndOf="@id/progressImageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/progressImageView"
+                    app:layout_constraintBottom_toBottomOf="@id/progressImageView"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStorySection"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.115" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/userHeaderSection"
+                style="@style/CardViewProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineStorySection">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/userImageView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/unit2x"
+                        android:contentDescription="@null"
+                        android:src="@drawable/user_pic_placeholder"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/usernameTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/unit2x"
+                        android:maxLines="1"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/textDark"
+                        android:textSize="@dimen/large_text"
+                        app:layout_constraintBottom_toBottomOf="@id/userImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/userImageView"
+                        app:layout_constraintTop_toTopOf="@id/userImageView"
+                        tools:text="John Doe" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/userInfoSection"
+                style="@style/CardViewProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userHeaderSection">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="@+id/workoutLevelValue"
+                    app:layout_constraintStart_toEndOf="@+id/workoutLevelValue">
+
+                    <ImageView
+                        android:id="@+id/infoImageView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/unit2x"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_info"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/personalInfoTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/unit2x"
+                        android:maxLines="1"
+                        android:text="@string/personal_info"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/textDark"
+                        android:textSize="@dimen/large_text"
+                        app:layout_constraintBottom_toBottomOf="@id/infoImageView"
+                        app:layout_constraintEnd_toStartOf="@+id/editImageView"
+                        app:layout_constraintStart_toEndOf="@id/infoImageView"
+                        app:layout_constraintTop_toTopOf="@id/infoImageView" />
+
+                    <ImageView
+                        android:padding="@dimen/unit"
+                        android:id="@+id/editImageView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/unit2x"
+                        android:layout_marginEnd="@dimen/unit"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_pen"
+                        app:layout_constraintBottom_toBottomOf="@id/infoImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/infoImageView" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/verticalGuideline"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintGuide_percent="0.5"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/birthdayTitle"
+                        style="@style/TextHeadersProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/unit3x"
+                        android:text="@string/birthday"
+                        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/infoImageView"
+                        app:layout_constraintTop_toBottomOf="@id/infoImageView" />
+
+                    <TextView
+                        android:id="@+id/birthdayValue"
+                        style="@style/TextValuesProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/infoImageView"
+                        app:layout_constraintTop_toBottomOf="@id/birthdayTitle"
+                        tools:text="21 Jan 1990" />
+
+
+                    <TextView
+                        android:id="@+id/genderTitle"
+                        style="@style/TextHeadersProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/unit3x"
+                        android:text="@string/gender"
+                        app:layout_constraintEnd_toEndOf="@+id/editImageView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintTop_toBottomOf="@id/infoImageView" />
+
+                    <TextView
+                        android:id="@+id/genderValue"
+                        style="@style/TextValuesProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/editImageView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintTop_toBottomOf="@id/genderTitle"
+                        tools:text="Male" />
+
+
+                    <TextView
+                        android:id="@+id/weightTitle"
+                        style="@style/TextHeadersProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/unit3x"
+                        android:text="@string/weight"
+                        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/infoImageView"
+                        app:layout_constraintTop_toBottomOf="@id/birthdayValue" />
+
+                    <TextView
+                        android:id="@+id/weightValue"
+                        style="@style/TextValuesProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/infoImageView"
+                        app:layout_constraintTop_toBottomOf="@id/weightTitle"
+                        tools:text="70.0 kg" />
+
+                    <TextView
+                        android:id="@+id/heightTitle"
+                        style="@style/TextHeadersProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/unit3x"
+                        android:text="@string/height"
+                        app:layout_constraintEnd_toEndOf="@+id/editImageView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintTop_toBottomOf="@id/genderValue" />
+
+                    <TextView
+                        android:id="@+id/heightValue"
+                        style="@style/TextValuesProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@+id/editImageView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintTop_toBottomOf="@id/heightTitle"
+                        tools:text="170 CM" />
+
+                    <TextView
+                        android:id="@+id/workoutLevelTitle"
+                        style="@style/TextHeadersProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/unit3x"
+                        android:text="@string/level"
+                        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/infoImageView"
+                        app:layout_constraintTop_toBottomOf="@id/weightValue" />
+
+                    <TextView
+                        android:id="@+id/workoutLevelValue"
+                        style="@style/TextValuesProfile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewStart"
+                        android:layout_marginBottom="@dimen/unit2x"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/infoImageView"
+                        app:layout_constraintTop_toBottomOf="@id/workoutLevelTitle"
+                        tools:text="Intermediate" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/selectableSection"
+                style="@style/CardViewProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userInfoSection">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/unit"
+                    android:paddingBottom="@dimen/unit">
+
+                    <com.axles.smartfitness.ui.profile.SelectableThing
+                        android:id="@+id/selectableThing1"
+                        android:layout_width="80dp"
+                        android:layout_height="64dp"
+                        app:description="@string/weight"
+                        app:icon="@drawable/kg_icon"
+                        app:iconSelected="@drawable/kg_icon_selected"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/selectableThing2"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.axles.smartfitness.ui.profile.SelectableThing
+                        android:id="@+id/selectableThing2"
+                        android:layout_width="81dp"
+                        android:layout_height="64dp"
+                        app:description="@string/measurements"
+                        app:icon="@drawable/ic_measurements"
+                        app:iconSelected="@drawable/ic_measurements_selected"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/selectableThing3"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/selectableThing1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.axles.smartfitness.ui.profile.SelectableThing
+                        android:id="@+id/selectableThing3"
+                        android:layout_width="81dp"
+                        android:layout_height="64dp"
+                        app:description="@string/water"
+                        app:icon="@drawable/ic_bottle"
+                        app:iconSelected="@drawable/ic_bottle_selected"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/selectableThing4"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/selectableThing2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.axles.smartfitness.ui.profile.SelectableThing
+                        android:id="@+id/selectableThing4"
+                        android:layout_width="81dp"
+                        android:layout_height="64dp"
+                        app:description="@string/bmi"
+                        app:icon="@drawable/ic_bmi"
+                        app:iconSelected="@drawable/ic_bmi_selected"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/selectableThing3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/inProgressSection"
+                style="@style/CardViewProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/unit3x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/selectableSection">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="64dp"
+                        android:layout_marginBottom="64dp"
+                        android:text="@string/in_progress"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="34sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

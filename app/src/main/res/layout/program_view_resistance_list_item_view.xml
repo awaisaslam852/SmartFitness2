@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="@dimen/custom_10dp"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<ImageView
+		android:id="@+id/muscleIconView"
+		android:layout_width="0dp"
+		android:layout_height="67dp"
+		android:layout_marginStart="33dp"
+		android:elevation="10dp"
+		android:adjustViewBounds="true"
+		android:src="@drawable/pic_chest"
+		android:contentDescription="@null"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="29dp"
+		app:cardCornerRadius="@dimen/default_corner_radius"
+		app:cardBackgroundColor="@color/transparent"
+		app:cardElevation="0dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@id/muscleIconView"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/white_background_gray_bordered">
+
+			<View
+				android:id="@+id/ribbonView"
+				android:layout_width="wrap_content"
+				android:layout_height="38dp"
+				android:background="@color/colorPrimary"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"/>
+
+			<TextView
+				android:id="@+id/muscleTitleView"
+				style="@style/TopBarTitle"
+				android:textSize="16.7sp"
+				android:text="@string/chest"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="@id/ribbonView"
+				app:layout_constraintBottom_toBottomOf="@id/ribbonView"/>
+
+			<TextView
+				android:id="@+id/indexView"
+				style="@style/TopBarTitle"
+				android:layout_width="33dp"
+				android:gravity="center_horizontal"
+				android:textSize="15sp"
+				android:text="1"
+				tools:ignore="HardcodedText"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="@id/ribbonView"
+				app:layout_constraintBottom_toBottomOf="@id/ribbonView"/>
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/exercisesRecyclerView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="@dimen/custom_1dp"
+				app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/ribbonView"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/noExercisesView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/custom_4dp"
+				android:gravity="center_horizontal"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="@color/black"
+				android:textSize="@dimen/custom_20sp"
+				android:text="@string/no_exercises_were_selected"
+				android:visibility="gone"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/ribbonView"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

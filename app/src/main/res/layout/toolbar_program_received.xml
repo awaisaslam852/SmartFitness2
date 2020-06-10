@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/toolbar_program_received"
+	style="@style/TopBar">
+
+	<TextView
+		android:id="@+id/textViewProgramsReceived"
+		style="@style/TopBarTitle"
+		android:text="@string/programs_received"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<ImageButton
+		android:id="@+id/imageButtonBurger"
+		style="@style/TopBarButton"
+		android:layout_marginStart="8dp"
+		android:padding="8dp"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_burger"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

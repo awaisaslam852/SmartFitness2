@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/layoutEditTransparent"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:elevation="8dp"
+	android:background="@color/fragment_transparent">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		android:background="@drawable/popup_rounded_background"
+		android:minHeight="300dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent">
+
+		<TextView
+			android:id="@+id/cancelBtn"
+			style="@style/BottomSheetButtonStyle"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="16dp"
+			android:text="@string/cancel"
+			app:layout_constraintEnd_toStartOf="@id/textViewEditDataLabel"
+			app:layout_constraintHorizontal_chainStyle="spread_inside"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/textViewEditDataLabel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:fontFamily="@font/os_semi_bold"
+			android:text="@string/select_time"
+			android:textColor="@color/black"
+			android:textSize="20sp"
+			app:layout_constraintEnd_toStartOf="@+id/saveBtn"
+			app:layout_constraintStart_toEndOf="@+id/cancelBtn"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/saveBtn"
+			style="@style/BottomSheetButtonStyle"
+			android:layout_marginEnd="16dp"
+			android:textColor="@color/colorPrimary"
+			android:text="@string/set_time"
+			app:layout_constraintBottom_toBottomOf="@id/cancelBtn"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@id/textViewEditDataLabel"
+			app:layout_constraintTop_toTopOf="@id/cancelBtn" />
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/textViewEditDataLabel"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<View
+				android:id="@+id/viewSelection"
+				android:layout_width="0dp"
+				android:layout_height="41dp"
+				android:background="@drawable/gray_stroke_rounded_transparent_background"
+				app:layout_constraintBottom_toBottomOf="@id/textViewMinLabel"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="@id/minutePicker"
+				app:layout_constraintTop_toTopOf="@id/textViewMinLabel" />
+
+			<com.shawnlin.numberpicker.NumberPicker
+				android:id="@+id/minutePicker"
+				style="@style/BottomSheetNumberPickerStyle"
+				app:np_formatter="%02d"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/textViewMinLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/textViewMinLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginEnd="14dp"
+				android:text="@string/min"
+				android:textColor="@color/colorAccent"
+				android:textSize="16sp"
+				android:fontFamily="@font/os"
+				android:layout_marginStart="8dp"
+				app:layout_constraintEnd_toStartOf="@id/textViewColonLabel"
+				app:layout_constraintTop_toTopOf="@id/minutePicker"
+				app:layout_constraintBottom_toBottomOf="@id/minutePicker"
+				/>
+
+			<TextView
+				android:id="@+id/textViewColonLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/colon"
+				android:textSize="16sp"
+				android:layout_marginStart="8dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:textColor="@color/black"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="@id/minutePicker"
+				app:layout_constraintBottom_toBottomOf="@id/minutePicker"
+				/>
+
+			<com.shawnlin.numberpicker.NumberPicker
+				android:id="@+id/secondPicker"
+				style="@style/BottomSheetNumberPickerStyle"
+				app:np_formatter="%02d"
+				app:layout_constraintStart_toEndOf="@id/textViewColonLabel"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/secondLabel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginEnd="16dp"
+				android:fontFamily="@font/os"
+				android:paddingEnd="8dp"
+				android:text="@string/sec"
+				android:textColor="@color/colorAccent"
+				android:textSize="16sp"
+				app:layout_constraintStart_toEndOf="@id/secondPicker"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="@id/minutePicker"
+				app:layout_constraintBottom_toBottomOf="@id/minutePicker"
+				tools:ignore="RtlSymmetry" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

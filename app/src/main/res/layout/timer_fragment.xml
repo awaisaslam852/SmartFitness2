@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:animateLayoutChanges="true"
+	android:background="@color/white">
+
+	<include
+		android:id="@+id/toolbar"
+		layout="@layout/toolbar_timer"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<com.axles.smartfitness.view.CustomProgressView
+		android:id="@+id/timerChat"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginTop="@dimen/custom_67dp"
+		app:circleWidth="@dimen/custom_8dp"
+		app:placeHolderColor="@color/gray"
+		app:startColor="@color/orange_gradient_end"
+		app:endColor="@color/orange_gradient_start"
+		app:startAngle="-90"
+		app:max="60"
+		app:progress="30"
+		app:layout_constraintDimensionRatio="w,1:1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/toolbar"
+		app:layout_constraintWidth_percent="0.5"/>
+
+	<TextView
+		android:id="@+id/remainingTimeView"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:fontFamily="@font/os_semi_bold"
+		android:textAlignment="center"
+		android:textColor="@color/textDark"
+		android:textSize="42sp"
+		app:layout_constraintBottom_toBottomOf="@id/timerChat"
+		app:layout_constraintEnd_toEndOf="@id/timerChat"
+		app:layout_constraintStart_toStartOf="@id/timerChat"
+		app:layout_constraintTop_toTopOf="@id/timerChat"
+		tools:text="00:21" />
+
+	<ImageView
+		android:id="@+id/timerMinus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@null"
+		android:src="@drawable/ic_minus_timer"
+		app:layout_constraintBottom_toBottomOf="@id/timerChat"
+		app:layout_constraintEnd_toStartOf="@+id/timerChat"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="@id/timerChat" />
+
+	<ImageView
+		android:id="@+id/timerPlus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:contentDescription="@null"
+		android:src="@drawable/ic_plus_timer"
+		app:layout_constraintBottom_toBottomOf="@id/timerChat"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/timerChat"
+		app:layout_constraintTop_toTopOf="@id/timerChat" />
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/restRepeatContainer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintVertical_bias="0.2"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/timerChat"
+		app:layout_constraintBottom_toTopOf="@id/bottomButtonContainer">
+
+		<TextView
+			android:id="@+id/restTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/os_semi_bold"
+			android:textColor="@color/black"
+			android:textSize="@dimen/custom_17sp"
+			android:text="@string/rest"
+			app:layout_constraintStart_toStartOf="@id/restValue"
+			app:layout_constraintEnd_toEndOf="@id/restValue"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+		<TextView
+			android:id="@+id/restValue"
+			android:layout_width="@dimen/custom_124dp"
+			android:layout_height="@dimen/custom_41dp"
+			android:layout_marginTop="@dimen/unit2x"
+			android:gravity="center"
+			android:background="@drawable/gray_frame"
+			android:fontFamily="@font/os"
+			android:textColor="@color/black"
+			android:textSize="@dimen/custom_20sp"
+			app:layout_constraintHorizontal_chainStyle="packed"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/repeatValue"
+			app:layout_constraintTop_toBottomOf="@id/restTitle"
+			tools:text="00:00" />
+
+		<TextView
+			android:id="@+id/repeatTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFamily="@font/os_semi_bold"
+			android:textColor="@color/black"
+			android:textSize="@dimen/custom_17sp"
+			android:text="@string/repeat"
+			app:layout_constraintStart_toStartOf="@id/repeatValue"
+			app:layout_constraintEnd_toEndOf="@id/repeatValue"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+		<TextView
+			android:id="@+id/repeatValue"
+			android:layout_width="@dimen/custom_124dp"
+			android:layout_height="@dimen/custom_41dp"
+			android:layout_marginStart="@dimen/custom_11dp"
+			android:layout_marginTop="@dimen/unit2x"
+			android:gravity="center"
+			android:background="@drawable/gray_frame"
+			android:fontFamily="@font/os"
+			android:textColor="@color/black"
+			android:textSize="@dimen/custom_20sp"
+			app:layout_constraintStart_toEndOf="@id/restValue"
+			app:layout_constraintEnd_toStartOf="@id/autoRepeatCheckBox"
+			app:layout_constraintTop_toBottomOf="@id/repeatTitle"
+			app:layout_constraintBottom_toBottomOf="parent"
+			tools:text="12 Times" />
+
+		<ImageView
+			android:id="@+id/autoRepeatCheckBox"
+			android:layout_width="32dp"
+			android:layout_height="32dp"
+			android:layout_marginStart="@dimen/custom_6dp"
+			android:contentDescription="@null"
+			android:src="@drawable/check_box_not_selected"
+			app:layout_constraintStart_toEndOf="@+id/repeatValue"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="@+id/repeatValue"
+			app:layout_constraintBottom_toBottomOf="@+id/repeatValue"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/bottomButtonContainer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/custom_25dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<Button
+			android:id="@+id/startButton"
+			style="@style/LargeOrangeButton"
+			android:layout_width="@dimen/custom_183dp"
+			android:layout_marginBottom="@dimen/custom_25dp"
+			android:fontFamily="@font/os_semi_bold"
+			android:textAllCaps="true"
+			android:text="@string/start"
+			android:visibility="visible"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/pauseButton"
+			style="@style/LargeOrangeButton"
+			android:layout_width="0dp"
+			android:layout_marginStart="@dimen/custom_24dp"
+			android:layout_marginBottom="@dimen/custom_25dp"
+			android:visibility="gone"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toStartOf="@id/stopButton"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/pauseIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_pause"
+				android:contentDescription="@null"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/pauseTitle"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/pauseTitle"
+				style="@style/LargeOrangeButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/custom_9dp"
+				android:fontFamily="@font/os_semi_bold"
+				android:textAllCaps="true"
+				android:background="@color/transparent"
+				android:text="@string/pause"
+				app:layout_constraintStart_toEndOf="@id/pauseIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/stopButton"
+			style="@style/LargeOrangeButton"
+			android:layout_width="0dp"
+			android:layout_marginStart="@dimen/custom_9dp"
+			android:layout_marginEnd="@dimen/custom_24dp"
+			android:layout_marginBottom="@dimen/custom_25dp"
+			android:visibility="gone"
+			android:backgroundTint="@color/colorPrimary"
+			app:layout_constraintHorizontal_weight="1"
+			app:layout_constraintStart_toEndOf="@id/pauseButton"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent">
+
+			<ImageView
+				android:id="@+id/stopIcon"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_stop"
+				android:contentDescription="@null"
+				app:layout_constraintHorizontal_chainStyle="packed"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toStartOf="@id/stopTitle"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+			<TextView
+				android:id="@+id/stopTitle"
+				style="@style/LargeOrangeButton"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/custom_9dp"
+				android:background="@color/transparent"
+				android:fontFamily="@font/os_semi_bold"
+				android:textAllCaps="true"
+				android:text="@string/stop"
+				app:layout_constraintStart_toEndOf="@id/stopIcon"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+	<FrameLayout
+		android:id="@+id/root"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:elevation="@dimen/unit"
+		android:focusable="true"
+		android:focusableInTouchMode="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

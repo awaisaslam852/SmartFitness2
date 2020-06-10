@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/custom_10dp">
+
+	<ImageView
+		android:id="@+id/closeBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="@dimen/custom_17dp"
+		android:adjustViewBounds="true"
+		android:contentDescription="@null"
+		android:src="@drawable/icon_cross"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/textViewChangeLanguage"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="@dimen/custom_10dp"
+		android:layout_marginTop="@dimen/custom_5dp"
+		android:fontFamily="@font/os_semi_bold"
+		android:text="@string/change_language_of_app"
+		android:textColor="@color/black"
+		android:textSize="@dimen/custom_19sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/closeBtn" />
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/englishBtn"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/custom_6dp"
+		android:layout_marginTop="@dimen/custom_18dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/textViewChangeLanguage">
+
+		<ImageView
+			android:id="@+id/englishCheckbox"
+			android:layout_width="wrap_content"
+			android:layout_height="@dimen/custom_19dp"
+			android:adjustViewBounds="true"
+			android:src="@drawable/check_box_checked_yellow"
+			android:contentDescription="@null"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<TextView
+			android:id="@+id/englishTitleView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/custom_11dp"
+			android:fontFamily="@font/os"
+			android:textSize="@dimen/custom_18sp"
+			android:textColor="@color/black"
+			android:text="@string/english"
+			app:layout_constraintStart_toEndOf="@id/englishCheckbox"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/hebrewBtn"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="@dimen/custom_6dp"
+		android:layout_marginTop="@dimen/custom_18dp"
+		android:layout_marginBottom="@dimen/custom_14dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/englishBtn"
+		app:layout_constraintBottom_toBottomOf="parent">
+
+		<ImageView
+			android:id="@+id/hebrewCheckbox"
+			android:layout_width="wrap_content"
+			android:layout_height="@dimen/custom_19dp"
+			android:adjustViewBounds="true"
+			android:src="@drawable/check_box_normal_yellow"
+			android:contentDescription="@null"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+		<TextView
+			android:id="@+id/hebrewTitleView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/custom_11dp"
+			android:fontFamily="@font/os"
+			android:textSize="@dimen/custom_18sp"
+			android:textColor="@color/black"
+			android:text="@string/hebrew"
+			app:layout_constraintStart_toEndOf="@id/hebrewCheckbox"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"/>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

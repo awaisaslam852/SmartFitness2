@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_profile_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/doneButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.axles.smartfitness.ui.profile.edit.ProfileInfoItem
+                android:id="@+id/birthdayItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:description="@string/bmi_needs_it"
+                app:icon="@drawable/calendar_icon"
+                app:title="@string/birthday" />
+
+            <com.axles.smartfitness.ui.profile.edit.ProfileInfoItem
+                android:id="@+id/weightItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:description="@string/bmi_needs_it"
+                app:icon="@drawable/kg_icon_selected"
+                app:title="@string/weight" />
+
+            <com.axles.smartfitness.ui.profile.edit.ProfileInfoItem
+                android:id="@+id/heightItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:description="@string/bmi_needs_it"
+                app:icon="@drawable/ic_height"
+                app:title="@string/height" />
+
+            <com.axles.smartfitness.ui.profile.edit.ProfileInfoItem
+                android:id="@+id/genderItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:description="@string/bmi_needs_it"
+                app:icon="@drawable/ic_gender"
+                app:title="@string/gender" />
+
+            <com.axles.smartfitness.ui.profile.edit.ProfileInfoItem
+                android:id="@+id/workoutLevelItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:description="@string/bmi_needs_it"
+                app:icon="@drawable/ic_level"
+                app:title="@string/level" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/unit3x"
+        android:background="@drawable/gradient_orange"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <FrameLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/unit"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

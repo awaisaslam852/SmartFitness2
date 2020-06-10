@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		tools:ignore="MissingConstraints">
+
+		<com.shawnlin.numberpicker.NumberPicker
+			android:id="@+id/pickerView"
+			android:layout_width="40dp"
+			android:layout_height="126dp"
+			android:background="@drawable/gray_stroke_rounded_picker_background"
+			app:np_dividerColor = "@color/gray_picker_color"
+			app:np_textColor="@color/black"
+			app:np_textSize="@dimen/custom_12sp"
+			app:np_selectedTextColor = "@color/colorAccent"
+			app:np_selectedTextSize="@dimen/custom_12sp"/>
+
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

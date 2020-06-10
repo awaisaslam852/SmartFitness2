@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCardioRows"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddNewRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAddNewRow"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/blue_thin_stroke_rounded_button_background"
+        android:fontFamily="@font/os"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/add_new_row"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewCardioRows" />
+
+    <Button
+        android:id="@+id/buttonMultiplyData"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/blue_thin_stroke_rounded_button_background"
+        android:fontFamily="@font/os"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/multiply_data"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/buttonAddNewRow"
+        app:layout_constraintEnd_toStartOf="@id/buttonAddNewRow"
+        app:layout_constraintTop_toTopOf="@id/buttonAddNewRow" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

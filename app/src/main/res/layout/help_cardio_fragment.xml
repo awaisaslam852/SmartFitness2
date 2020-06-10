@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<include layout="@layout/toolbar_help_cardio"
+		/>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="52dp"
+		app:layout_constraintTop_toBottomOf="@id/toolbar"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:id="@+id/layoutNoteContainer"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:background="@drawable/note_background"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintBottom_toTopOf="@+id/cardViewStep1">
+
+				<TextView
+					style="@style/HelpNoteStyle"
+					android:layout_marginTop="@dimen/custom_8dp"
+					android:layout_marginBottom="@dimen/custom_8dp"
+					android:fontFamily="@font/os"
+					android:text="@string/note_this_cardio_program_is_a_static"
+					android:textAlignment="center"
+					android:textColor="@color/black"
+					android:textSize="@dimen/custom_11sp"
+					tools:ignore="SmallSp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="parent"/>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardViewStep1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/custom_8dp"
+				android:layout_marginTop="@dimen/custom_10dp"
+				android:layout_marginEnd="@dimen/custom_8dp"
+				app:cardCornerRadius="@dimen/custom_5dp"
+				app:cardElevation="@dimen/custom_1dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/layoutNoteContainer">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/textViewStep1"
+						style="@style/HelpStepTextStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_marginStart="8dp"
+						android:layout_marginTop="8dp"
+						android:textSize="@dimen/custom_14sp"
+						android:text="@string/step_1"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/textViewStep1Explanation"
+						style="@style/HelpStepExplanationStyle"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="@dimen/custom_4dp"
+						android:layout_marginEnd="@dimen/custom_14dp"
+						android:textSize="@dimen/custom_14sp"
+						android:text="@string/choose_one_activity_from_the_tabs"
+						android:textAlignment="viewStart"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/textViewStep1"
+						app:layout_constraintTop_toTopOf="@id/textViewStep1" />
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="@dimen/custom_70dp"
+						android:layout_marginTop="@dimen/custom_12dp"
+						android:layout_marginBottom="@dimen/custom_8dp"
+						android:src="@drawable/tabs"
+						android:adjustViewBounds="true"
+						android:contentDescription="@null"
+						app:layout_constraintBottom_toBottomOf="parent"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toBottomOf="@id/textViewStep1Explanation" />
+
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+			</androidx.cardview.widget.CardView>
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardViewStep2"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/custom_8dp"
+				android:layout_marginTop="@dimen/custom_10dp"
+				android:layout_marginEnd="@dimen/custom_8dp"
+				app:cardCornerRadius="@dimen/custom_5dp"
+				app:cardElevation="@dimen/custom_1dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/cardViewStep1">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/textViewStep2"
+						style="@style/HelpStepTextStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_marginStart="@dimen/custom_8dp"
+						android:layout_marginTop="8dp"
+						android:textSize="@dimen/custom_14sp"
+						android:text="@string/step_2"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/textViewStep2Explanation"
+						style="@style/HelpStepExplanationStyle"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="4dp"
+						android:layout_marginEnd="14dp"
+						android:textSize="@dimen/custom_14sp"
+						android:text="@string/in_the_first_row_that_appears"
+						android:textAlignment="viewStart"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/textViewStep2"
+						app:layout_constraintTop_toTopOf="@id/textViewStep2" />
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="@dimen/custom_72dp"
+						android:layout_marginStart="24dp"
+						android:layout_marginTop="12dp"
+						android:layout_marginEnd="24dp"
+						android:layout_marginBottom="8dp"
+						android:contentDescription="@null"
+						android:adjustViewBounds="true"
+						android:src="@drawable/row"
+						app:layout_constraintBottom_toBottomOf="parent"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toBottomOf="@id/textViewStep2Explanation" />
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+			</androidx.cardview.widget.CardView>
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardViewStep3"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="8dp"
+				app:cardCornerRadius="5dp"
+				app:cardElevation="1dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/cardViewStep2">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/textViewStep3"
+						style="@style/HelpStepTextStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_marginStart="8dp"
+						android:layout_marginTop="8dp"
+						android:text="@string/step_3"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/textViewStep3Explanation"
+						style="@style/HelpStepExplanationStyle"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="4dp"
+						android:layout_marginEnd="14dp"
+						android:text="@string/after_fill_in_the_data_you_can_add_a_new_row_and_prepare_a_multi_data_plan"
+						android:textAlignment="viewStart"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/textViewStep3"
+						app:layout_constraintTop_toTopOf="@id/textViewStep3" />
+
+					<Button
+						android:layout_width="wrap_content"
+						android:layout_height="28dp"
+						android:layout_marginStart="24dp"
+						android:layout_marginTop="12dp"
+						android:layout_marginEnd="24dp"
+						android:layout_marginBottom="8dp"
+						android:paddingStart="4dp"
+						android:paddingEnd="4dp"
+						android:textSize="@dimen/custom_14sp"
+						android:text="@string/add_new_row"
+						android:background="@drawable/blue_thin_stroke_rounded_button_background"
+						android:contentDescription="@null"
+						android:enabled="false"
+						android:textColor="@color/colorPrimary"
+						android:textAllCaps="false"
+						app:layout_constraintBottom_toBottomOf="parent"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toBottomOf="@id/textViewStep3Explanation" />
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+			</androidx.cardview.widget.CardView>
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardViewStep4"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="8dp"
+				app:cardCornerRadius="5dp"
+				app:cardElevation="1dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/cardViewStep3">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/textViewStep4"
+						style="@style/HelpStepTextStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_marginStart="8dp"
+						android:layout_marginTop="8dp"
+						android:textSize="@dimen/custom_14sp"
+						android:text="@string/step_4"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/textViewStep4Explanation"
+						style="@style/HelpStepExplanationStyle"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="4dp"
+						android:layout_marginEnd="14dp"
+						android:text="@string/multiplying_the_data"
+						android:textAlignment="viewStart"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/textViewStep4"
+						app:layout_constraintTop_toTopOf="@id/textViewStep4" />
+
+					<Button
+						android:layout_width="wrap_content"
+						android:layout_height="28dp"
+						android:layout_marginStart="24dp"
+						android:layout_marginTop="12dp"
+						android:layout_marginEnd="24dp"
+						android:layout_marginBottom="8dp"
+						android:paddingStart="4dp"
+						android:paddingEnd="4dp"
+						android:textSize="@dimen/custom_14sp"
+						android:text="@string/multiply_data"
+						android:background="@drawable/blue_thin_stroke_rounded_button_background"
+						android:contentDescription="@null"
+						android:enabled="false"
+						android:textColor="@color/colorPrimary"
+						android:textAllCaps="false"
+						app:layout_constraintBottom_toBottomOf="parent"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toBottomOf="@id/textViewStep4Explanation" />
+				</androidx.constraintlayout.widget.ConstraintLayout>
+			</androidx.cardview.widget.CardView>
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardViewStep5"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="8dp"
+				app:cardCornerRadius="5dp"
+				app:cardElevation="1dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/cardViewStep4">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/textViewStep5"
+						style="@style/HelpStepTextStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_marginStart="8dp"
+						android:layout_marginTop="8dp"
+						android:text="@string/step_5"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/textViewStep5Explanation"
+						style="@style/HelpStepExplanationStyle"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="4dp"
+						android:layout_marginEnd="14dp"
+						android:text="@string/if_you_choose_to_multiply"
+						android:textAlignment="viewStart"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/textViewStep5"
+						app:layout_constraintTop_toTopOf="@id/textViewStep5" />
+
+					<androidx.cardview.widget.CardView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						app:cardElevation="3dp"
+						app:layout_constraintTop_toBottomOf="@id/textViewStep5Explanation"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintBottom_toBottomOf="parent"
+						android:layout_marginTop="22dp"
+						android:layout_marginBottom="16dp"
+						>
+						<include
+							layout="@layout/cardio_multiplication_layout"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:minWidth="340dp"
+							/>
+					</androidx.cardview.widget.CardView>
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+			</androidx.cardview.widget.CardView>
+
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/cardViewStep6"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="8dp"
+				app:cardCornerRadius="5dp"
+				app:cardElevation="1dp"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/cardViewStep5">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<TextView
+						android:id="@+id/textViewStep6"
+						style="@style/HelpStepTextStyle"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:layout_marginStart="8dp"
+						android:layout_marginTop="8dp"
+						android:text="@string/step_6"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<TextView
+						android:id="@+id/textViewStep6Explanation"
+						style="@style/HelpStepExplanationStyle"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="4dp"
+						android:layout_marginEnd="14dp"
+						android:text="@string/when_finished_filling_in_the_data"
+						android:textAlignment="viewStart"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/textViewStep6"
+						app:layout_constraintTop_toTopOf="@id/textViewStep6" />
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:background="@drawable/gradient_orange_vertical_no_rounding"
+						android:layout_marginBottom="16dp"
+						android:layout_marginTop="26dp"
+						android:layout_marginStart="40dp"
+						android:layout_marginEnd="40dp"
+						app:layout_constraintBottom_toBottomOf="parent"
+						app:layout_constraintTop_toBottomOf="@id/textViewStep6Explanation"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintEnd_toEndOf="parent">
+
+						<TextView
+							android:id="@+id/textViewTotalTimeLabel"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="12dp"
+							android:layout_gravity="center"
+							android:fontFamily="@font/os_semi_bold"
+							android:text="@string/total_time_30_00"
+							android:textColor="@color/white"
+							android:textSize="@dimen/custom_15sp"
+							/>
+
+						<TextView
+							android:id="@+id/textViewTotalDistanceLabel"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"
+							android:layout_gravity="center"
+							android:fontFamily="@font/os_semi_bold"
+							android:text="@string/total_distance_5_0"
+							android:textColor="@color/white"
+							android:textSize="@dimen/custom_15sp"
+							/>
+					</LinearLayout>
+				</androidx.constraintlayout.widget.ConstraintLayout>
+			</androidx.cardview.widget.CardView>
+
+			<Button
+				android:id="@+id/buttonOkHelp"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="25dp"
+				android:layout_marginBottom="22dp"
+				android:background="@drawable/gradient_orange_vertical"
+				android:textColor="@color/white"
+				android:text="@string/ok"
+				android:fontFamily="@font/os_semi_bold"
+				android:textSize="@dimen/custom_17sp"
+				app:layout_constraintTop_toBottomOf="@id/cardViewStep6"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintBottom_toBottomOf="parent"
+				/>
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

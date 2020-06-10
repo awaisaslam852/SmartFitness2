@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingEnd="@dimen/unit2x"
+        android:paddingBottom="@dimen/unit2x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintHeight_percent="0.5"
+        tools:ignore="RtlSymmetry">
+
+        <ImageButton
+            android:id="@+id/imageButtonDismiss"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/transparent"
+            android:contentDescription="@null"
+            android:src="@drawable/icon_cross"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/chooseFitnessLevelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/os_semi_bold"
+            android:text="@string/fitness_level"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.53"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageButtonDismiss" />
+
+        <RadioButton
+            android:id="@+id/beginnerRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/unit"
+            app:layout_constraintBottom_toBottomOf="@id/beginnerImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/beginnerImageView" />
+
+        <ImageView
+            android:id="@+id/beginnerImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit3x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_level_beginner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/beginnerRadioButton"
+            app:layout_constraintTop_toBottomOf="@id/chooseFitnessLevelTitle" />
+
+        <RadioButton
+            android:id="@+id/intermediateRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/intermediateImageView"
+            app:layout_constraintStart_toStartOf="@id/beginnerRadioButton"
+            app:layout_constraintTop_toTopOf="@id/intermediateImageView" />
+
+        <ImageView
+            android:id="@+id/intermediateImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit3x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_level_intermediate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/beginnerRadioButton"
+            app:layout_constraintTop_toBottomOf="@id/beginnerImageView" />
+
+        <RadioButton
+            android:id="@+id/expertRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/expertImageView"
+            app:layout_constraintStart_toStartOf="@id/beginnerRadioButton"
+            app:layout_constraintTop_toTopOf="@id/expertImageView" />
+
+        <ImageView
+            android:id="@+id/expertImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit3x"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_level_expert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/beginnerRadioButton"
+            app:layout_constraintTop_toBottomOf="@id/intermediateImageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center_horizontal">
+
+		<RelativeLayout
+			android:id="@+id/setContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:layout_centerInParent="true">
+
+				<TextView
+					android:id="@+id/setTitleView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/os"
+					android:textSize="17sp"
+					android:textColor="#000000"
+					android:text="Sets:"/>
+
+				<include
+					android:id="@+id/setPicker"
+					layout="@layout/picker_layout"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"/>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/repContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:layout_centerInParent="true">
+
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical">
+
+					<ImageView
+						android:id="@+id/repsToTimeBtn"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:paddingTop="8dp"
+						android:paddingEnd="8dp"
+						android:contentDescription="@null"
+						android:src="@drawable/arrow_down_yellow"/>
+
+					<TextView
+						android:id="@+id/repsTitleView"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="@font/os"
+						android:textSize="17sp"
+						android:textColor="#000000"
+						android:text="Reps:"/>
+
+				</LinearLayout>
+
+				<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingStart="16dp"
+					android:paddingEnd="0dp"
+					android:layout_marginTop="5dp">
+
+					<include
+						android:id="@+id/repPicker"
+						layout="@layout/picker_layout"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+
+				</RelativeLayout>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/rmContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:layout_centerInParent="true">
+
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical">
+
+					<ImageView
+						android:id="@+id/rmToTimeBtn"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:paddingTop="8dp"
+						android:paddingEnd="8dp"
+						android:contentDescription="@null"
+						android:src="@drawable/arrow_down_yellow"/>
+
+					<TextView
+						android:id="@+id/rmTitleView"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="@font/os"
+						android:textSize="17sp"
+						android:textColor="#000000"
+						android:text="Reps (RM):"/>
+
+				</LinearLayout>
+
+				<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingStart="16dp"
+					android:paddingEnd="0dp"
+					android:layout_marginTop="5dp">
+
+					<include
+						android:id="@+id/rmPicker"
+						layout="@layout/picker_layout"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+
+				</RelativeLayout>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/timeContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:layout_centerInParent="true">
+
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical">
+
+					<ImageView
+						android:id="@+id/timeToRepsBtn"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:paddingTop="8dp"
+						android:paddingEnd="8dp"
+						android:contentDescription="@null"
+						android:src="@drawable/arrow_down_yellow"/>
+
+					<TextView
+						android:id="@+id/timeTitleView"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="@font/os"
+						android:textSize="17sp"
+						android:textColor="#000000"
+						android:text="Time:"/>
+
+				</LinearLayout>
+
+				<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingStart="24dp"
+					android:paddingEnd="0dp"
+					android:layout_marginTop="5dp">
+
+					<include
+						android:id="@+id/timePicker"
+						layout="@layout/time_picker_layout"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+
+				</RelativeLayout>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/kgContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:layout_centerInParent="true">
+
+				<TextView
+					android:id="@+id/kgTitleView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/os"
+					android:textSize="17sp"
+					android:textColor="#000000"
+					android:text="Kg:"/>
+
+				<include
+					android:id="@+id/kgPicker"
+					layout="@layout/picker_layout"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"/>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/percentContainer"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="20dp"
+				android:gravity="center_horizontal"
+				android:layout_centerInParent="true">
+
+				<TextView
+					android:id="@+id/percentTitleView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/os"
+					android:textSize="17sp"
+					android:textColor="#000000"
+					android:text="%:"/>
+
+				<include
+					android:id="@+id/percentPicker"
+					layout="@layout/picker_layout"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"/>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+</RelativeLayout>
